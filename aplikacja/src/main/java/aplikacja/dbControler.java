@@ -36,7 +36,7 @@ public class dbControler implements dbSlave{
 
 	@Override
 	public List<maszyny> list() {
-	    String sql = "SELECT material,operacja,czas FROM marszruta LIMIT 10";
+	    String sql = "SELECT material,operacja,czas FROM marszruta";
 	   
 	    List<maszyny> marszrutaList = jdbcTemp.query(sql, new RowMapper<maszyny>() {
 	 

@@ -14,7 +14,7 @@
 		<c:forEach var="aMaszyny" items="${ListaDb}">
 			<tr>
 				<td>${aMaszyny.material}</td>
-				<td>${aMaszyny.Operacje}</td>
+				<td>${aMaszyny.operacje}</td>
 				<td>${aMaszyny.czas}</td>
 
 			</tr>
