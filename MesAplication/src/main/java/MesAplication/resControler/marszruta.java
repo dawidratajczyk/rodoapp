@@ -3,6 +3,7 @@ package MesAplication.resControler;
 
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 
 
@@ -10,7 +11,7 @@ import javax.persistence.Entity;
 
 public class marszruta  {
 	
-
+@Id
 String maszyna;
 String operacja;
 String czas;
