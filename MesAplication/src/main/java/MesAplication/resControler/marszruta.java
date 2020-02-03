@@ -3,20 +3,38 @@ package MesAplication.resControler;
 
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 
 
 
 @Entity
-
 public class marszruta  {
 	
 @Id
+@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "users_seq_gen")
+@SequenceGenerator(name = "users_seq_gen", sequenceName = "users_id_seq")
+Long id;
 String maszyna;
 String operacja;
 String czas;
 String material;
 String opis;
+
+
+public Long getId() {
+	return id;
+}
+
+
+
+
+public void setId(Long id) {
+	id = id;
+}
+
 public marszruta() {
 	
 }
@@ -24,12 +42,13 @@ public marszruta() {
 
 
 
-public marszruta(String maszyna, String operacja, String czas, String material, String opis) {
+public marszruta(long id, String maszyna, String operacja, String czas, String material, String opis) {
 	this.maszyna = maszyna;
 	this.operacja = operacja;
 	this.czas = czas;
 	this.material = material;
 	this.opis = opis;
+	this.id = id;
 }
 
 
@@ -48,8 +67,6 @@ public String getOpis() {
 public void setOpis(String opis) {
 	this.opis = opis;
 }
-
-
 
 
 public String getMaszyna() {

@@ -16,9 +16,8 @@ public class marszrutaServis {
 	@Autowired
 	crudControler Crud;
 	
-	@GetMapping("/findall")
-	@ResponseBody
-	public List<marszruta> list(){
+	@GetMapping("/findall")	
+	public @ResponseBody List<marszruta> list(){
 		
 		return Crud.findAll();
 	}
