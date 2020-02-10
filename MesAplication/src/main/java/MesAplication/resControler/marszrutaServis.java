@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@ResponseBody
 public class marszrutaServis {
 
 	
@@ -23,12 +22,13 @@ public class marszrutaServis {
 	
 
 	@GetMapping("/findall")	
+	@ResponseBody
 	public List<marszruta> list(){
 		
 		return Crud.findAll();
 	}
 	
-	@GetMapping("/showrecords")	
+	@GetMapping("/show")	
 	public ModelAndView showall(){
 		ModelAndView mav = new ModelAndView();
 		List<marszruta> nowaLista = Crud.findAll();
