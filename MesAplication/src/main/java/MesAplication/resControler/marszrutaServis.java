@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @ResponseBody
@@ -25,6 +26,15 @@ public class marszrutaServis {
 	public List<marszruta> list(){
 		
 		return Crud.findAll();
+	}
+	
+	@GetMapping("/showrecords")	
+	public ModelAndView showall(){
+		ModelAndView mav = new ModelAndView();
+		List<marszruta> nowaLista = Crud.findAll();
+		mav.addObject("nowaLista",nowaLista);
+		mav.setViewName("all");
+		return mav;
 	}
 	
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
