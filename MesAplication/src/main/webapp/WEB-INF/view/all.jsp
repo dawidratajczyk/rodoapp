@@ -1,18 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01
-    Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <%@ page isELIgnored="false"%>   
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Wszystkie rekordy</title>
 </head>
 <body>
 <div align="center")>
 							<table>
 								<tr>
+									<th>ID</th>
 									<th>maszyna</th>
 									<th>operacja</th>
 									<th>czas</th>
@@ -20,8 +20,9 @@
 									<th>opis</th>
 								</tr>
 							
-							<c:forEach items="$nowaLista" var="marszruta">
+							<c:forEach items="${nowaLista}" var="marszruta">
 							<tr>
+								<td>${marszruta.id}</td>
 								<td>${marszruta.maszyna}</td>
 								<td>${marszruta.operacja}</td>
 								<td>${marszruta.czas}</td>
