@@ -3,10 +3,12 @@ package MesAplication.resControler;
 
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -38,13 +40,17 @@ public class marszrutaServis {
 	}
 	
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
-	@ResponseBody
-	public void save(@RequestBody marszruta Marszruta) {
+	public String saveKod(@ModelAttribute("marszruta") marszruta marszruta) {
+	    Crud.save(marszruta);
+	    return "redirect:/show";
+	}
 	
-		Crud.save(Marszruta);
-		
 	
-		
+	@RequestMapping("/dodaj")
+	public String newMarszrutaForm(Map<String, Object> model) {
+	    marszruta marszruta = new marszruta();
+	    model.put("marszruta", marszruta);
+	    return "new";
 	}
 	
 }

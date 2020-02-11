@@ -10,7 +10,7 @@
 </head>
 <body>
 <div align="center")>
-							<table>
+							<table border="1" cellpadding="5">
 								<tr>
 									<th>ID</th>
 									<th>maszyna</th>

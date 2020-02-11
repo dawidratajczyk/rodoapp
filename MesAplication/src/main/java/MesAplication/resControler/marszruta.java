@@ -9,14 +9,22 @@ import javax.persistence.Id;
 
 
 
+/**
+ * @author dratajczyk
+ *
+ */
+/**
+ * @author dratajczyk
+ *
+ */
 @Entity
 public class marszruta  {
 	
 @Id
-@GeneratedValue(strategy = GenerationType.AUTO)
+@GeneratedValue(strategy = GenerationType.SEQUENCE)
 //@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "users_seq_gen")
 //@SequenceGenerator(name = "users_seq_gen", sequenceName = "users_id_seq")
-Long id;
+long id;
 String maszyna;
 String operacja;
 String czas;
@@ -24,16 +32,24 @@ String material;
 String opis;
 
 
-public Long getId() {
+
+
+
+
+
+public long getId() {
 	return id;
 }
 
 
 
 
-public void setId(Long id) {
-	id = id;
+public void setId(long id) {
+	this.id = id;
 }
+
+
+
 
 public marszruta() {
 	
@@ -42,7 +58,7 @@ public marszruta() {
 
 
 
-public marszruta( String maszyna, String operacja, String czas, String material, String opis) {
+public marszruta(String maszyna, String operacja, String czas, String material, String opis) {
 	this.maszyna = maszyna;
 	this.operacja = operacja;
 	this.czas = czas;
@@ -51,8 +67,12 @@ public marszruta( String maszyna, String operacja, String czas, String material,
 
 }
 
-
-
+public String getMaszyna() {
+	return maszyna;
+}
+public void setMaszyna(String maszyna) {
+	this.maszyna = maszyna;
+}
 
 
 public String getMaterial() {
@@ -69,12 +89,7 @@ public void setOpis(String opis) {
 }
 
 
-public String getMaszyna() {
-	return maszyna;
-}
-public void setMaszyna(String maszyna) {
-	this.maszyna = maszyna;
-}
+
 public String getOperacja() {
 	return operacja;
 }
