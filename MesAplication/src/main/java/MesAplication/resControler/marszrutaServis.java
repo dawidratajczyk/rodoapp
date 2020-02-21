@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -21,6 +20,11 @@ public class marszrutaServis {
 	
 	@Autowired
 	crudControler Crud;
+	
+	
+	@Autowired
+	crudControlerDlaMaszyn crudMachine;
+	
 	
 
 	@GetMapping("/findall")	
@@ -48,9 +52,23 @@ public class marszrutaServis {
 	
 	@RequestMapping("/dodaj")
 	public String newMarszrutaForm(Map<String, Object> model) {
-	    marszruta marszruta = new marszruta();
-	    model.put("marszruta", marszruta);
+	  marszruta marszruta = new marszruta();
+
+	  List<maszyny> listaMaszyn = crudMachine.findAll();		
+	  
+	  model.put("marszruta", marszruta);
+	  model.put("listaMaszyn", listaMaszyn);
 	    return "new";
-	}
+	   }
+
+	
+	@RequestMapping("/test")
+	public String Test() {
+	
+
+	    return "test";
+	   }
+
+	
 	
 }

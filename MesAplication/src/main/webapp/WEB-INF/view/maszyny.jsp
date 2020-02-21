@@ -1,27 +1,26 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <%@ page isELIgnored="false"%>   
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Wszystkie rekordy</title>
 </head>
 <body>
 <div align="center">
-
 	<table>
 	<tr>
 	<th>
-	<form action="<c:url value="/dodaj" />" method="GET" >
-	    <input type="submit" value="Dodaj"/>    
-	</form>
-	</th>
+<form action="<c:url value="/dodajmaszyne" />" method="GET">
+    <input type="submit" value="Dodaj-Maszyne"/>    
+</form>
+</th>
 <th>
-	<form action="<c:url value="/maszyny" />" method="GET">
-	    <input type="submit" value="ManagerMaszyn"/>    
-	</form>
+<form action="<c:url value="/show" />" method="GET">
+    <input type="submit" value="MenuGlowne"/>    
+</form>
 </th>
 </tr>
 	</table>
@@ -30,22 +29,14 @@
 
 							<table class="blueTable">
 								<tr>
-									<th>ID</th>
 									<th>maszyna</th>
-									<th>operacja</th>
-									<th>czas</th>
-									<th>material</th>
-									<th>opis</th>
+									<th>obszar</th>
 								</tr>
 							
-							<c:forEach items="${nowaLista}" var="marszruta">
+							<c:forEach items="${maszyny}" var="maszyny">
 							<tr>
-								<td>${marszruta.id}</td>
-								<td>${marszruta.maszyna}</td>
-								<td>${marszruta.operacja}</td>
-								<td>${marszruta.czas}</td>
-								<td>${marszruta.material}</td>
-								<td>${marszruta.opis}</td>
+								<td>${maszyny.maszyna}</td>
+								<td>${maszyny.obszar}</td>
 							
 							</tr>
 							</c:forEach>
