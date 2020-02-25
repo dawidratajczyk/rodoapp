@@ -12,18 +12,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" type="text/css" href="css/tabela.css" />
 <title>Dodaj nowy rekord</title>
 </head>
 <body>
     <div align="center">
         <h2>Nowy wpis</h2>
         <form:form action="save" method="post" modelAttribute="marszruta">
-            <table border="0" cellpadding="5">
+            <table border="0" cellpadding="5" class="blueTable">
                 <tr>
                     <td>maszyna: </td>
 	                    <td>
 	                    <form:select path="maszyna">
-			                    <c:forEach items="${listaMaszyn}" var = "maszyny">
+			                    <c:forEach items="${listofMachine}" var = "maszyny">
 			                    			<form:option value="${maszyny.maszyna}" />
 			                    </c:forEach>
 	                    </form:select>	                    
@@ -47,8 +48,8 @@
                     <td><form:input path="opis" /></td>
                 </tr>      
                 <tr>
-                    <td colspan="2"><input type="submit" value="save"></td>
-
+                    <td colspan="2"><input type="submit" value="save">
+                   <input type="button" onclick="history.back();" value="Wstecz"></td>
 
                 </tr>                    
             </table>

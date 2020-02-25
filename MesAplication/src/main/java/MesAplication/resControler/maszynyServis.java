@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import MesAplication.resControler.entities.maszyny;
+
 @Controller
 public class maszynyServis {
 	

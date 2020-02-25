@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import MesAplication.resControler.entities.marszruta;
+import MesAplication.resControler.entities.maszyny;
+
 @Controller
 public class marszrutaServis {
 
@@ -57,7 +60,7 @@ public class marszrutaServis {
 	  List<maszyny> listaMaszyn = crudMachine.findAll();		
 	  
 	  model.put("marszruta", marszruta);
-	  model.put("listaMaszyn", listaMaszyn);
+	  model.put("listofMachine", listaMaszyn);
 	    return "new";
 	   }
 

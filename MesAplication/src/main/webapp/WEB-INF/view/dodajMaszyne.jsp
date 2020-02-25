@@ -7,13 +7,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" type="text/css" href="css/tabela.css" />
 <title>Dodaj nowa maszyne</title>
 </head>
 <body>
     <div align="center">
         <h2>Dodaj nowa maszyne</h2>
         <form:form action="saveMachine" method="post" modelAttribute="modelmaszyny">
-            <table border="0" cellpadding="5">
+            <table border="0" cellpadding="5" class="blueTable">
                 <tr>
                     <td>maszyna: </td>
                     <td><form:input path="maszyna" /></td>
@@ -23,7 +24,8 @@
                     <td><form:input path="obszar" /></td>
                 </tr>    
                 <tr>
-                    <td colspan="2"><input type="submit" value="Zapisz"></td>
+                    <td colspan="2"><input type="submit" value="Zapisz">
+                   <input type="button" onclick="history.back();" value="Wstecz"></td>
 </tr>                    
             </table>
         </form:form>

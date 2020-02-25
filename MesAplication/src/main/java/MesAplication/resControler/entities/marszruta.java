@@ -1,4 +1,4 @@
-package MesAplication.resControler;
+package MesAplication.resControler.entities;
 
 
 
