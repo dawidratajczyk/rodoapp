@@ -19,6 +19,7 @@
 									<th>materiał</th>
 									<th>Operacja</th>
 									<th>Czas</th>
+									<th>Norma</th>
 										
 								</tr>
 							
@@ -26,7 +27,9 @@
 							<tr>
 								<td>${dane.material}</td>
 								<td>${dane.operacja}</td>
-								<td>${dane.wartoscstandardowa2}</td>	
+								<td>${dane.wartoscstandardowa2}</td>
+								<td>${dane.norma}</td>
+																
 							</tr>
 							</c:forEach>
 							
