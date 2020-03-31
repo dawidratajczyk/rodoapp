@@ -14,6 +14,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <link rel="stylesheet" type="text/css" href="css/tabela.css" />
 <title>Dodaj nowy rekord</title>
+
 </head>
 <body>
     <div align="center">
@@ -23,7 +24,7 @@
                 <tr>
                     <td>maszyna: </td>
 	                    <td>
-	                    <form:select path="maszyna">
+	                    <form:select id ="maszynynbox" path="maszyna">
 			                    <c:forEach items="${listofMachine}" var = "maszyny">
 			                    			<form:option value="${maszyny.maszyna}" />
 			                    </c:forEach>
@@ -31,6 +32,7 @@
 	                    	
 	                    </td>
                 </tr>
+
                 <tr>
                     <td>operacja: </td>
                     <td><form:input path="operacja" /></td>

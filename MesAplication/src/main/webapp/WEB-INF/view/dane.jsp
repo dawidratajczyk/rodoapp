@@ -8,6 +8,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <link rel="stylesheet" type="text/css" href="css/tabela.css" />
 <title>Wszystkie dane</title>
+
+
 </head>
 <body>
 <div align="center">

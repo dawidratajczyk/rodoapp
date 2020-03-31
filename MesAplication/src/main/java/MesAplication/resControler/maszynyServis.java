@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.google.gson.Gson;
+
 import MesAplication.resControler.entities.maszyny;
 
 @Controller
@@ -51,6 +53,23 @@ crudControlerDlaMaszyn crud;
 		crud.save(maszyny);
 		return "redirect:/maszyny";
 	}
+	
+	@ResponseBody
+	@GetMapping("/obszary")
+	public String pokazobszary() {
+		Gson gson = new Gson();		
+		return gson.toJson(crud.findAll());
+	}
+	
+
+	
+	@GetMapping("/ajaxtest")
+	public String testajax() {
+		
+		return "ajaxtest";
+	}
+	
+	
 	
 
 }
