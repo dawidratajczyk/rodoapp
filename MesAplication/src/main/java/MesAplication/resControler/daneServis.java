@@ -1,14 +1,18 @@
 package MesAplication.resControler;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-
-import com.google.gson.Gson;
 
 import MesAplication.resControler.entities.dane;
 
@@ -38,7 +42,7 @@ public ModelAndView showMarszruta() {
 }
 @ResponseBody
 @GetMapping("/test")
-public String  marszruta(){
+public List<dane>  marszruta(){
 	List<dane> lista = crud.findAll();
 	lista.forEach(dane->{
 	String czas = dane.getWartoscstandardowa2();
@@ -51,11 +55,40 @@ public String  marszruta(){
 	
 	});
 	
-	Gson gson = new Gson();
-	return gson.toJson(lista);
+	return lista;
 	
 }
 
+
+@ResponseBody
+@RequestMapping(value="/znajdz/{id}")
+public Optional<dane> FindOneRow(@PathVariable long id) {
+		Optional<dane> dane = crud.findById(id);
+		
+	
+
+	return dane;
+}
+
+@ResponseBody
+@GetMapping("/testparam")
+public String testparam(@RequestParam String dane) {
+	
+	
+	return "Przekazano dane: " + dane;
+	
+}
+
+
+
+
+@ResponseBody
+@PostMapping("/dodajKod")
+public String addKod(@RequestBody dane dane) {
+	
+	crud.save(dane);
+	return "Kod dodany";
+}
 
 
 

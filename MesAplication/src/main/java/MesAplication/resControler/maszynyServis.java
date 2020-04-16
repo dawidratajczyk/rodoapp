@@ -22,11 +22,7 @@ public class maszynyServis {
 @Autowired
 crudControlerDlaMaszyn crud;
 
-	@GetMapping("/maszyny/all")
-	@ResponseBody
-	public List<maszyny> list(){
-		return crud.findAll();
-	}
+
 	
 	@GetMapping("/maszyny")
 	public ModelAndView showmachine() {
@@ -54,11 +50,21 @@ crudControlerDlaMaszyn crud;
 		return "redirect:/maszyny";
 	}
 	
+	
+	//* ponizszy kod odpowiedzialny za testy Ajaxa*//
+	
+
 	@ResponseBody
 	@GetMapping("/obszary")
 	public String pokazobszary() {
 		Gson gson = new Gson();		
 		return gson.toJson(crud.findAll());
+	}
+	
+	@GetMapping("/maszyny/all")
+	@ResponseBody
+	public List<maszyny> list(){
+		return crud.findAll();
 	}
 	
 
