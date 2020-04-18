@@ -3,7 +3,7 @@
 		console.log("dziala");
 	 $.ajax({
 		type:'GET',
-		url: 'http://192.168.0.107:8080/obszary',	 
+		url: 'http://localhost:8080/obszary',	 
 				success: function(result){
 				var result = JSON.parse(result);
 				var s = '';

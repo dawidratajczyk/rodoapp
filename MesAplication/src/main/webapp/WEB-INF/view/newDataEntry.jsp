@@ -7,10 +7,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Wszystkie rekordy</title>
-  <link rel="stylesheet" type="text/css" href="css/tabela.css" />
-  <%-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> --%>
-   <%--<script src="webjars/jquery/3.3.1/jquery.min.js"></script>--%>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  	<link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+	<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="webjars/jquery/3.3.1/jquery.min.js"></script>
+	
+  	<%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>--%>
 	<script src="/js/test.js"></script>
 
 </head>
@@ -24,6 +25,9 @@
 										<th>obszar</th>
 									</tr>
 								</table>
+								
+								
+								
 								
 								<form>
 								<table>
