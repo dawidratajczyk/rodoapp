@@ -1,10 +1,11 @@
 package MesAplication.resControler;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import MesAplication.resControler.entities.dane;
@@ -16,9 +17,26 @@ public class ContrMarszruta {
 crudControlerDlaDanych crudData;
 
 
+@GetMapping("/addrecord")
+public String addrec() {
+
+	return "newDataEntry";
+}
+
+@ResponseBody
+@GetMapping("/findrecord")
+public List<dane> findedData(@RequestParam String mat){
+	String material = "%"+mat+"%";
+	System.out.println(mat);
+	
+	List<dane> dane = crudData.findByMaterialLike(material);
+	return dane;
+	
+}
 
 
-@GetMapping("/addRecord")
+
+@GetMapping("/addrecordtest")
 public ModelAndView addRecord() {
 	ModelAndView mv = new ModelAndView();
 	List<dane> listOfData;
