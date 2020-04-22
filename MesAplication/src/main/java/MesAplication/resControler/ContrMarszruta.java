@@ -34,6 +34,17 @@ public List<dane> findedData(@RequestParam String mat){
 	
 }
 
+@ResponseBody
+@GetMapping("/findoperation")
+public List<dane> findoperation(@RequestParam String mat){
+	String material = mat;
+	System.out.println(mat);
+	
+	List<dane> dane = crudData.findByMaterial(material);
+	return dane;
+	
+}
+
 
 
 @GetMapping("/addrecordtest")
