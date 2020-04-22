@@ -7,6 +7,8 @@ import org.springframework.web.servlet.view.RedirectView;
 @RestController
 public class HelloController {
 
+	
+	
 	@RequestMapping("/")
 	public RedirectView index() {
 		return new RedirectView("/show");
