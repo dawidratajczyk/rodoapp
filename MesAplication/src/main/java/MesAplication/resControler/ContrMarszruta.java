@@ -1,5 +1,6 @@
 package MesAplication.resControler;
 
+import java.util.Collection;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import MesAplication.resControler.entities.dane;
+import MesAplication.resControler.entities.dane.materialOnly;
 
 
 @Controller
@@ -27,11 +29,11 @@ public String addrec() {
 @CrossOrigin
 @ResponseBody
 @GetMapping("/findrecord")
-public List<dane> findedData(@RequestParam String mat){
+public Collection<materialOnly> findedData(@RequestParam String mat){
 	String material = "%"+mat+"%";
 	System.out.println(mat);
 	
-	List<dane> dane = crudData.findByMaterialLike(material);
+	Collection<materialOnly> dane = crudData.findDistinctByMaterialLike(material);
 	return dane;
 	
 }
@@ -47,6 +49,9 @@ public List<dane> findoperation(@RequestParam String mat){
 	return dane;
 	
 }
+
+
+
 
 
 @CrossOrigin

@@ -76,6 +76,9 @@ public void setOperacja(String Operacja) {
 	this.Operacja = Operacja;
 }
 
+public interface materialOnly{
+	String getMaterial();
+}
 
 
 
