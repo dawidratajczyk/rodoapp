@@ -24,7 +24,7 @@
 								
 								
 <form>
-	<table id="tablePreview" class="table table-striped table-hover table-sm">
+	<table id="tablePreview" class="table table-striped table-hover table-sm table-bordered">
 	<tr>
 	<td>Wpisz fragment kodu</td>
 	<td><input type="text" id="fragment"></input></td>
@@ -34,10 +34,11 @@
 		<td>wybierz kod</td>
 		<td>
 		<select id ="kod">
-		<%--<c:forEach items="${listDanych}" var="dane">
-		<option>${dane.material}</option>
-		</c:forEach>--%>
-		
+											
+											<%--<c:forEach items="${listDanych}" var="dane">
+											<option>${dane.material}</option>
+											</c:forEach>--%>
+											
 		</select>
 		</td>
 	</tr>
