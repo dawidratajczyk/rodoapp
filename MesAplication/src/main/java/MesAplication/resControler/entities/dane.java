@@ -19,7 +19,7 @@ public void setNorma(double norma) {
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 Long id;
 String material;
-String Operacja;
+String operacja;
 String wartoscstandardowa2;
 
 @Transient
@@ -70,14 +70,18 @@ public void setMaterial(String materiał) {
 	this.material = materiał;
 }
 public String getOperacja() {
-	return Operacja;
+	return operacja;
 }
-public void setOperacja(String Operacja) {
-	this.Operacja = Operacja;
+public void setOperacja(String operacja) {
+	this.operacja = operacja;
 }
 
 public interface materialOnly{
 	String getMaterial();
+}
+
+public interface wartoscstandardowa2Only{
+	String getWartoscstandardowa2();
 }
 
 

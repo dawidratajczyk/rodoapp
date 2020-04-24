@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import MesAplication.resControler.entities.dane;
 import MesAplication.resControler.entities.dane.materialOnly;
+import MesAplication.resControler.entities.dane.wartoscstandardowa2Only;
 
 public interface crudControlerDlaDanych extends JpaRepository<dane,Long> {
 	
@@ -17,5 +18,7 @@ public interface crudControlerDlaDanych extends JpaRepository<dane,Long> {
 	
 	
 	Collection<materialOnly> findDistinctByMaterialLike(String material);
+	
+	Collection<wartoscstandardowa2Only> findByMaterialAndOperacja(String material,String operacja);
 
 }

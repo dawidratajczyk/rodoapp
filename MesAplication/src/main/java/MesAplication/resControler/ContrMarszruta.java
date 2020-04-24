@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import MesAplication.resControler.entities.dane;
 import MesAplication.resControler.entities.dane.materialOnly;
+import MesAplication.resControler.entities.dane.wartoscstandardowa2Only;
 
 
 @Controller
@@ -46,6 +47,20 @@ public List<dane> findoperation(@RequestParam String mat){
 	System.out.println(mat);
 	
 	List<dane> dane = crudData.findByMaterial(material);
+	return dane;
+	
+}
+
+
+@CrossOrigin
+@ResponseBody
+@GetMapping("/findtime")
+public Collection<wartoscstandardowa2Only> findtime(@RequestParam String mat, @RequestParam String op ){
+	String material = mat;
+	String operacja = op;
+
+	
+	Collection<wartoscstandardowa2Only> dane = crudData.findByMaterialAndOperacja(material,operacja);
 	return dane;
 	
 }

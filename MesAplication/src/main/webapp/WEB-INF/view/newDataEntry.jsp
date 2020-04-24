@@ -26,12 +26,14 @@
 								
 <form>
 	<table class="blueTable">
+	<%-- Pierwszy rekord, wybór fragmentu kodu --%>
 	<tr>
 	<td>Wpisz fragment kodu</td>
 	<td><input type="text" id="fragment"></input></td>
 	<td><button id="szukaj" type="button">szukaj</button></td>
 	</tr>
 	
+	<%-- drugi rekord, wybor pelnego kodu --%>
 	<tr>
 		<td>wybierz kod</td>
 		<td>
@@ -45,11 +47,32 @@
 		</td>
 	</tr>
 	
+	<%-- trzeci rekord, wybór operacji --%>
 	<tr>
-		<td>Wybor</td>
+		<td>operacja</td>
 		<td>
 		<select id ="operacja"></select>
 		</td>
+	</tr>
+	
+	<%-- Czwarty rekord - czas --%>
+	<tr>
+		<td>czas</td>
+		<td>
+		<select id ="czas"></select>
+		</td>
+	
+	
+	</tr>
+	
+		<%-- Piąty rekord - norma --%>
+	<tr>
+		<td>norma</td>
+		<td>
+		<select id ="norma"></select>
+		</td>
+	
+	
 	</tr>
 </table>
 </form>
