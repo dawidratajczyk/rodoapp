@@ -25,10 +25,11 @@
 								
 								
 <form>
-	<table id="tablePreview" class="table table-bordered table-striped table-hover table-sm">
+	<table class="blueTable">
 	<tr>
 	<td>Wpisz fragment kodu</td>
 	<td><input type="text" id="fragment"></input></td>
+	<td><button id="szukaj" type="button">szukaj</button></td>
 	</tr>
 	
 	<tr>
