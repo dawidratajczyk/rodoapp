@@ -62,10 +62,13 @@
 					
 				}
 				$('#czas').html(s);
-				//var n = 60/(s.replace(",","."));
-				var n = parseFloat(s.replace(",","."));
+				var n = s.replace(",",".");
+				n = n.replace("<option>","");
+				n = n.replace("</option>","");
+				n = parseFloat(n);
 				var w = (n / 60);
-				console.log(w);
+				w = Math.round((w + Number.EPSILON) * 100) / 100
+				w = '<option>' + w + '</option>'
 				$('#norma').html(w);
 
 				
