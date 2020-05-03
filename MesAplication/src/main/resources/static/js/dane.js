@@ -66,8 +66,9 @@
 				n = n.replace("<option>","");
 				n = n.replace("</option>","");
 				n = parseFloat(n);
-				var w = (n / 60);
-				w = Math.round((w + Number.EPSILON) * 100) / 100
+				var w = (60 / n);
+				//w = Math.round((w + Number.EPSILON) * 100) / 100
+				w = parseInt(w);
 				w = '<option>' + w + '</option>'
 				$('#norma').html(w);
 
