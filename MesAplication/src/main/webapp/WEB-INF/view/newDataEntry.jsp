@@ -1,6 +1,7 @@
 	<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
     <%@ page isELIgnored="false"%>   
 <!DOCTYPE html>
 <html>
@@ -24,7 +25,7 @@
 											
 								
 								
-<form>
+<form:form action="saveprod" method="post" modelAttribute="zapis">
 	<table class="blueTable">
 	<%-- Pierwszy rekord, wybór fragmentu kodu --%>
 	<tr>
@@ -33,17 +34,14 @@
 	<td><button id="szukaj" type="button">szukaj</button></td>
 	</tr>
 	
+
 	<%-- drugi rekord, wybor pelnego kodu --%>
 	<tr>
 		<td>wybierz kod</td>
 		<td>
-		<select id ="kod">
-											
-											<%--<c:forEach items="${listDanych}" var="dane">
-											<option>${dane.material}</option>
-											</c:forEach>--%>
-											
-		</select>
+		<form:select id ="material" path="material">
+																					
+		</form:select>
 		</td>
 	</tr>
 	
@@ -51,15 +49,28 @@
 	<tr>
 		<td>operacja</td>
 		<td>
-		<select id ="operacja"></select>
+		<form:select id ="operacja" path="operacja"></form:select>
 		</td>
 	</tr>
+	
+		<%-- Pierwszy drugi, maszyna --%>
+	<tr>
+		<td>maszyna</td>
+		<td>
+		<form:select id ="maszyna" path="maszyna">
+		<c:forEach items="${maszyny}" var = "maszyny">
+		<form:option value="${maszyny.maszyna}" />
+		</c:forEach>
+		</form:select>	                    
+		</td>
+    </tr>
+	
 	
 	<%-- Czwarty rekord - czas --%>
 	<tr>
 		<td>czas</td>
 		<td>
-		<select id ="czas"></select>
+		<form:select id ="czas" path="czas"></form:select>
 		</td>
 	
 	
@@ -69,13 +80,25 @@
 	<tr>
 		<td>norma</td>
 		<td>
-		<select id ="norma"></select>
+		<form:select id ="norma" path="norma"></form:select>
 		</td>
 	
 	
 	</tr>
+	
+		<%-- Szosty rekord - opis --%>
+  	<tr>
+                    <td>opis</td>
+                    <td><form:input path="opis" /></td>
+    </tr>    
+	
+	                <tr>
+                    <td colspan="2"><input type="submit" value="save">
+                   <input type="button" onclick="history.back();" value="Wstecz"></td>
+
+                </tr>      
 </table>
-</form>
+</form:form>
 
 </div>
 </body>

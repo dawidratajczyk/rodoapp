@@ -2,17 +2,22 @@ package MesAplication.resControler;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
-
 import MesAplication.resControler.entities.dane;
+import MesAplication.resControler.entities.maszyny;
 import MesAplication.resControler.entities.dane.materialOnly;
 import MesAplication.resControler.entities.dane.wartoscstandardowa2Only;
+import MesAplication.resControler.entities.produkcja;
 
 
 @Controller
@@ -20,10 +25,21 @@ public class ContrMarszruta {
 @Autowired
 crudControlerDlaDanych crudData;
 
+@Autowired
+crudControlerDlaMaszyn crudMachine;
+
+@Autowired
+crudControlerDlaProdukcji crud;
+
 @CrossOrigin
 @GetMapping("/addrecord")
-public String addrec() {
-
+public String addrec(Map<String,Object> model) {
+	produkcja produkcja = new produkcja();
+	List<maszyny> listaMaszyn = crudMachine.findAll();	
+	
+	
+	model.put("zapis", produkcja);
+	model.put("maszyny", listaMaszyn);
 	return "newDataEntry";
 }
 
@@ -66,20 +82,10 @@ public Collection<wartoscstandardowa2Only> findtime(@RequestParam String mat, @R
 }
 
 
-
-
-
-@CrossOrigin
-@GetMapping("/addrecordtest")
-public ModelAndView addRecord() {
-	ModelAndView mv = new ModelAndView();
-	List<dane> listOfData;
-	listOfData = crudData.findAll();
-	
-	
-	mv.addObject("listDanych",listOfData);
-	mv.setViewName("newDataEntry");
-	return mv;
+@RequestMapping(value = "/saveprod", method = RequestMethod.POST)
+public String saveKod(@ModelAttribute("produkcja") produkcja produkcja) {
+    crud.save(produkcja);
+    return "redirect:/show";
 }
 
 	

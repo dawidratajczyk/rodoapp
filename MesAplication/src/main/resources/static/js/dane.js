@@ -1,6 +1,7 @@
   $(document).ready(function(){
-	 var URL = 'http://localhost:8080/'
-	  $('#szukaj').on('click', function(){   
+	 //var URL = 'http://localhost:8080/'
+		 var URL =	 window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port: '')+ '/';
+		 $('#szukaj').on('click', function(){
 		var kod = fragment.value;
 	 $.ajax({
 		type:'GET',
@@ -12,7 +13,7 @@
 					s += '<option>' + result[i].material + '</option>';
 					
 				}
-				$('#kod').html(s);
+				$('#material').html(s);
 				$('#operacja').html('<option></option>');
 				$('#czas').html('<option></option>');
 				$('#norma').html('<option></option>');
@@ -25,7 +26,7 @@
 
 	
 	
-		  $('#kod').on('change', function(){   
+		  $('#material').on('change', function(){   
 		var material = this.value;
 	 $.ajax({
 		type:'GET',
@@ -49,11 +50,11 @@
 	//// Po wyborze kodu oraz operacji w polu czas pojawi sie czas.
 	// poprawic norme
 	  $('#operacja').on('change', function(){   
-		var material = kod.value;
-		var operacja = this.value;
+			var mate = material.value;
+			var operacja = this.value;
 	 $.ajax({
 		type:'GET',
-		url: URL + 'findtime?mat=' + material +"&op=" + operacja,
+		url: URL + 'findtime?mat=' + mate +"&op=" + operacja,
 				success: function(result){
 				//var result = JSON.parse(result);//
 				var s = '';
