@@ -93,7 +93,7 @@
     </tr>    
 	
 	                <tr>
-                    <td colspan="2"><input type="submit" value="save">
+                    <td colspan="2"><input type="submit" value="Zapisz">
                    <input type="button" onclick="history.back();" value="Wstecz"></td>
 
                 </tr>      

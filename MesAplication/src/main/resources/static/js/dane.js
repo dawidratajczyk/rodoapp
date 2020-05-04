@@ -33,7 +33,7 @@
 		url: URL + 'findoperation?mat=' + material,	
 				success: function(result){
 				//var result = JSON.parse(result);//
-				var s = '';
+				var s = '<option>wybierz operacje</option>';
 				for(var i = 0; i < result.length; i++) {
 					s += '<option>' + result[i].operacja + '</option>';
 					
