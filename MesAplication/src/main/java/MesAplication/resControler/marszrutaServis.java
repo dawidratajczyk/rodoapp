@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import MesAplication.resControler.entities.marszruta;
 import MesAplication.resControler.entities.maszyny;
+import MesAplication.resControler.entities.produkcja;
 
 @Controller
 public class marszrutaServis {
@@ -28,7 +29,8 @@ public class marszrutaServis {
 	@Autowired
 	crudControlerDlaMaszyn crudMachine;
 	
-	
+	@Autowired
+	crudControlerDlaProdukcji crudProd;
 
 	@GetMapping("/findall")	
 	@ResponseBody
@@ -40,7 +42,7 @@ public class marszrutaServis {
 	@GetMapping("/show")	
 	public ModelAndView showall(){
 		ModelAndView mav = new ModelAndView();
-		List<marszruta> nowaLista = Crud.findAll();
+		List<produkcja> nowaLista = crudProd.findAll();
 		mav.addObject("nowaLista",nowaLista);
 		mav.setViewName("all");
 		return mav;

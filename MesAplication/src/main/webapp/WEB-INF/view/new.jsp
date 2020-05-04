@@ -19,13 +19,13 @@
 <body>
     <div align="center">
         <h2>Nowy wpis</h2>
-        <form:form action="save" method="post" modelAttribute="marszruta">
+        <form:form action="saveprod" method="post" modelAttribute="marszruta">
             <table border="0" cellpadding="5" class="blueTable">
                 <tr>
                     <td>maszyna: </td>
 	                    <td>
 	                    <form:select id ="maszynynbox" path="maszyna">
-			                    <c:forEach items="${listofMachine}" var = "maszyny">
+			                    <c:forEach items="${listaMaszyn}" var = "maszyny">
 			                    			<form:option value="${maszyny.maszyna}" />
 			                    </c:forEach>
 	                    </form:select>	                    

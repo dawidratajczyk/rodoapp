@@ -15,7 +15,8 @@
 	<table class="blueTable">
 	<tr>
 	<th>
-	<form action="<c:url value="/dodaj" />" method="GET" >
+	<%--<form action="<c:url value="/dodaj" />" method="GET" > --%>
+	<form action="<c:url value="/addrecord" />" method="GET" >
 	    <input type="submit" value="Dodaj"/>    
 	</form>
 	</th>
@@ -35,18 +36,20 @@
 									<th>maszyna</th>
 									<th>operacja</th>
 									<th>czas</th>
+									<th>norma</th>
 									<th>material</th>
 									<th>opis</th>
 								</tr>
 							
-							<c:forEach items="${nowaLista}" var="marszruta">
+							<c:forEach items="${nowaLista}" var="produkcja">
 							<tr>
-								<td>${marszruta.id}</td>
-								<td>${marszruta.maszyna}</td>
-								<td>${marszruta.operacja}</td>
-								<td>${marszruta.czas}</td>
-								<td>${marszruta.material}</td>
-								<td>${marszruta.opis}</td>
+								<td>${produkcja.id}</td>
+								<td>${produkcja.maszyna}</td>
+								<td>${produkcja.operacja}</td>
+								<td>${produkcja.czas}</td>
+								<td>${produkcja.norma}</td>
+								<td>${produkcja.material}</td>
+								<td>${produkcja.opis}</td>
 							
 							</tr>
 							</c:forEach>
