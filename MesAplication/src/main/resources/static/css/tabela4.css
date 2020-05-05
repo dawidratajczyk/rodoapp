@@ -1,3 +1,14 @@
+select {
+	width: 100%;
+}
+
+option {
+	width: 100%;
+}
+
+input[type=text]{
+	width: 100%;
+}
 
 table.greenTable {
   font-family: Tahoma, serif;
