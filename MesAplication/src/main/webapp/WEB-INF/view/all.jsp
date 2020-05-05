@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <link rel="stylesheet" type="text/css" href="css/tabela.css" />
+  <link rel="stylesheet" type="text/css" href="css/tabela4.css" />
 <title>Wszystkie rekordy</title>
 </head>
 <body>
@@ -30,7 +30,7 @@
 	
 
 
-							<table class="blueTable">
+							<table class="greenTable">
 								<tr>
 									<th>ID</th>
 									<th>maszyna</th>
@@ -38,7 +38,9 @@
 									<th>czas</th>
 									<th>norma</th>
 									<th>material</th>
-									<th>opis</th>
+									<th>wykonano</th>
+									<th>ustawienia</th>
+	
 								</tr>
 							
 							<c:forEach items="${nowaLista}" var="produkcja">
@@ -50,6 +52,10 @@
 								<td>${produkcja.norma}</td>
 								<td>${produkcja.material}</td>
 								<td>${produkcja.opis}</td>
+								<td><a href="/edit?id=${produkcja.id}"  style="text-decoration:none">edytuj</a>
+										&nbsp;&nbsp;&nbsp;
+									<a href="/delete?id=${produkcja.id}"  style="text-decoration:none">usun</a>
+								</td>
 							
 							</tr>
 							</c:forEach>

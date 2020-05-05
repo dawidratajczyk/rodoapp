@@ -25,42 +25,51 @@
 											
 								
 								
-<form:form action="saveprod" method="post" modelAttribute="zapis">
-	<table class="greenTable" style="width:60%">
+<form:form action="editsave" method="post" modelAttribute="produkcja">
+	<table class="greenTable" style="width:50%">
+	<tr>
+		<td>ID:
+		</td>
+		<td>
+        <form:select id ="id" path="id">
+		<option>${produkcja.id}</option>																	
+		</form:select>
+		</td>
+	</tr>
 	<%-- Pierwszy rekord, wybór fragmentu kodu --%>
 	<tr>
-	<td>WPROWADZ FRAGMENT KODU</td>
-	<td><input type="text" id="fragment"></input></td>
-	<td><button id="szukaj" type="button">szukaj</button></td>
+		<td>Wpisz fragment kodu</td>
+		<td><input type="text" id="fragment"></input></td>
+		<td><button id="szukaj" type="button">szukaj</button></td>
 	</tr>
 	
 
 	<%-- drugi rekord, wybor pelnego kodu --%>
 	<tr>
-		<td>WYBIERZ KOD</td>
+		<td>wybierz kod</td>
 		<td>
 		<form:select id ="material" path="material">
-																					
+		<option>${produkcja.material}</option>																	
 		</form:select>
 		</td>
 	</tr>
 	
 	<%-- trzeci rekord, wybór operacji --%>
 	<tr>
-		<td>OPERACJA</td>
+		<td>operacja</td>
 		<td>
-		<form:select id ="operacja" path="operacja"></form:select>
+		<form:select id ="operacja" path="operacja">
+		<option>${produkcja.operacja}</option>
+		</form:select>
 		</td>
 	</tr>
 	
 		<%-- Pierwszy drugi, maszyna --%>
 	<tr>
-		<td>MASZYNA</td>
+		<td>maszyna</td>
 		<td>
 		<form:select id ="maszyna" path="maszyna">
-		<c:forEach items="${maszyny}" var = "maszyny">
-		<form:option value="${maszyny.maszyna}" />
-		</c:forEach>
+		<option>${produkcja.maszyna}</option>
 		</form:select>	                    
 		</td>
     </tr>
@@ -68,9 +77,11 @@
 	
 	<%-- Czwarty rekord - czas --%>
 	<tr>
-		<td>CZAS</td>
+		<td>czas</td>
 		<td>
-		<form:select id ="czas" path="czas"></form:select>
+		<form:select id ="czas" path="czas">
+		<option>${produkcja.czas}</option>
+		</form:select>
 		</td>
 	
 	
@@ -78,9 +89,11 @@
 	
 		<%-- Piąty rekord - norma --%>
 	<tr>
-		<td>NORMA</td>
+		<td>norma</td>
 		<td>
-		<form:select id ="norma" path="norma"></form:select>
+		<form:select id ="norma" path="norma">
+		<option>${produkcja.norma}</option>
+		</form:select>
 		</td>
 	
 	
@@ -88,8 +101,8 @@
 	
 		<%-- Szosty rekord - opis --%>
   	<tr>
-                    <td>WYKONANO</td>
-                    <td><form:input path="opis" /></td>
+                    <td>wykonano</td>
+                    <td><form:input path="opis" value="${produkcja.opis}"/></td>
     </tr>    
 	
 	                <tr>
