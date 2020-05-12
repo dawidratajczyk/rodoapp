@@ -26,7 +26,7 @@
 								
 								
 <form:form action="editsave" method="post" modelAttribute="produkcja">
-	<table class="greenTable" style="width:50%">
+	<table class="greenTable" style="width:100%">
 	<tr>
 		<td>ID:
 		</td>

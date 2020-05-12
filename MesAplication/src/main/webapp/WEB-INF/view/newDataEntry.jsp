@@ -26,7 +26,7 @@
 								
 								
 <form:form action="saveprod" method="post" modelAttribute="zapis">
-	<table class="greenTable" style="width:60%">
+	<table class="greenTable" style="width:100%">
 	<%-- Pierwszy rekord, wybór fragmentu kodu --%>
 	<tr>
 	<td>WPROWADZ FRAGMENT KODU</td>
