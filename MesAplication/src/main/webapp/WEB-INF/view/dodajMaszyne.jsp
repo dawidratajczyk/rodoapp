@@ -7,14 +7,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <link rel="stylesheet" type="text/css" href="css/tabela.css" />
+  <link rel="stylesheet" type="text/css" href="css/tabela4.css" />
 <title>Dodaj nowa maszyne</title>
 </head>
 <body>
     <div align="center">
         <h2>Dodaj nowa maszyne</h2>
         <form:form action="saveMachine" method="post" modelAttribute="modelmaszyny">
-            <table border="0" cellpadding="5" class="blueTable">
+            <table border="0" cellpadding="5" class="greenTable">
                 <tr>
                     <td>maszyna: </td>
                     <td><form:input path="maszyna" /></td>

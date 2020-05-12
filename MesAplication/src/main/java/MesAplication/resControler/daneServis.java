@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -22,6 +21,7 @@ public class daneServis {
 crudControlerDlaDanych crud;
 
 
+//na ten moment endpoint nieużywany
 @GetMapping("/marszruta")
 public ModelAndView showMarszruta() {
 	List<dane> lista = crud.findAll();
@@ -40,6 +40,8 @@ public ModelAndView showMarszruta() {
 	return mv;
 
 }
+
+//na ten moment endpoint nieużywany
 @ResponseBody
 @GetMapping("/test")
 public List<dane>  marszruta(){
@@ -48,11 +50,6 @@ public List<dane>  marszruta(){
 	String czas = dane.getWartoscstandardowa2();
 	czas = czas.replace(',','.');
 	dane.setNorma(60/Double.parseDouble(czas));
-	
-	
-	//double czasParsowany = Double.parseDouble(czas);
-	//dane.setNorma(60 / czasParsowany);
-	
 	});
 	
 	return lista;
@@ -70,18 +67,8 @@ public Optional<dane> FindOneRow(@PathVariable long id) {
 	return dane;
 }
 
-@ResponseBody
-@GetMapping("/testparam")
-public String testparam(@RequestParam String dane) {
-	
-	
-	return "Przekazano dane: " + dane;
-	
-}
 
-
-
-
+//na ten moment endpoint nieużywany
 @ResponseBody
 @PostMapping("/dodajKod")
 public String addKod(@RequestBody dane dane) {

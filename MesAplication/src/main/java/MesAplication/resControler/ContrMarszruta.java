@@ -9,10 +9,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
 import MesAplication.resControler.entities.dane;
 import MesAplication.resControler.entities.maszyny;
 import MesAplication.resControler.entities.dane.materialOnly;
@@ -88,5 +91,27 @@ public String saveKod(@ModelAttribute("produkcja") produkcja produkcja) {
     return "redirect:/show";
 }
 
+
+@GetMapping("/edit")
+public ModelAndView editrecord(@RequestParam long id) {
+	ModelAndView mv = new ModelAndView("edit");
+	produkcja produkcja = crud.getOne(id);
+	mv.addObject("produkcja", produkcja);
+	return mv;
+	
+}
+
+@PostMapping("/editsave")
+public String editrecord(@ModelAttribute("produkcja") produkcja produkcja) {
+	crud.save(produkcja);
+	return "redirect:/";
+}
+
+
+@GetMapping("/delete")
+public String deleterecord(@RequestParam Long id) {
+	crud.deleteById(id);
+	return "redirect:/";
+}
 	
 }

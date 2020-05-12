@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-  <link rel="stylesheet" type="text/css" href="css/tabela.css" />
+  <link rel="stylesheet" type="text/css" href="css/tabela4.css" />
 <title>Wszystkie rekordy</title>
 </head>
 <body>
@@ -28,7 +28,7 @@
 	
 
 
-							<table class="blueTable">
+							<table class="greenTable">
 								<tr>
 									<th>maszyna</th>
 									<th>obszar</th>
