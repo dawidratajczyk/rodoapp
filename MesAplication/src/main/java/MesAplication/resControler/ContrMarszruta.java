@@ -84,6 +84,16 @@ public Collection<wartoscstandardowa2Only> findtime(@RequestParam String mat, @R
 	
 }
 
+@CrossOrigin
+@ResponseBody
+@GetMapping("/test2")
+public List<produkcja> test(){
+	
+List<produkcja> dane = crud.findAll();
+
+return dane;
+}
+
 
 @RequestMapping(value = "/saveprod", method = RequestMethod.POST)
 public String saveKod(@ModelAttribute("produkcja") produkcja produkcja) {
