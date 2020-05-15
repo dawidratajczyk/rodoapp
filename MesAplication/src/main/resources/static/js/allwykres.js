@@ -14,27 +14,41 @@
 			 results.forEach(function(e) {
 			      labels.push(e.material);
 			      data.push(parseInt(e.opis));
+			      
+			      
+			    var options = {				
+			      tooltips: {enabled: false},
+			      hover: {mode: null},
+			      showTooltips: false,
+						 };
 			 
+			  	var config = {
+						   type: 'bar',						   
+						   options: options,
+			  			   data: {
+						   labels: labels,
+						   datasets: [{
+						         label: 'Wykres ilości',
+						         data: data,
+						         backgroundColor: 'rgba(0, 119, 204, 0.3)'
+						      }]
+						   }
+			  			
+						
+			  	  
+						  
+						};
 			 
+					
+				var chart = new Chart(ctx, config);
+				
+		
 			 
 		 })
 		 })
 
-		 	console.log(labels);
-			var config = {
-					   type: 'bar',
-					   data: {
-					      labels: labels,
-					      datasets: [{
-					         label: 'Graph Line',
-					         data: data,
-					         backgroundColor: 'rgba(0, 119, 204, 0.3)'
-					      }]
-					   }
-					};
-				
-			var chart = new Chart(ctx, config);
-					 //koniec myChart
+		 	
+		
 
   
   })

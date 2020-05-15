@@ -10,13 +10,14 @@
   <script src="webjars/jquery/3.3.1/jquery.min.js"></script>
   <script src="webjars/bootstrap/4.4.1-1/js/bootstrap.min.js"></script>
   <script src="webjars/chartjs/2.9.3/Chart.min.js"></script>
-  <%--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script> --%>
   <script src="/js/allwykres.js"></script>
+    <script src="/js/divider.js"></script>
+
 <title>Wszystkie rekordy</title>
 </head>
 <body>
-<div style="width:50%;height:100px">
-<canvas id="myChart"></canvas>
+<div>
+<canvas id="myChart" style="position: relative; height:40vh; width:80vw"></canvas>
 </div>
 <div align="center">
 
@@ -39,7 +40,7 @@
 	
 
 
-							<table class="greenTable">
+							<table  id="divider" class="greenTable">
 								<tr>
 									<th>ID</th>
 									<th>maszyna</th>
