@@ -11,13 +11,13 @@
   <script src="webjars/bootstrap/4.4.1-1/js/bootstrap.min.js"></script>
   <script src="webjars/chartjs/2.9.3/Chart.min.js"></script>
   <script src="/js/allwykres.js"></script>
-    <script src="/js/divider.js"></script>
+
 
 <title>Wszystkie rekordy</title>
 </head>
 <body>
 <div>
-<canvas id="myChart" style="position: relative; height:40vh; width:80vw"></canvas>
+<canvas id="myChart" style="position: relative; height:20vh; width:40vw"></canvas>
 </div>
 <div align="center">
 
