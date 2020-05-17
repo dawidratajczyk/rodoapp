@@ -117,5 +117,10 @@ public void setCzas(String czas) {
 	this.czas = czas;
 }
 
+public interface materialandcount{
+	String getMaterial();
+	String getOpis();
+}
+
 
 }

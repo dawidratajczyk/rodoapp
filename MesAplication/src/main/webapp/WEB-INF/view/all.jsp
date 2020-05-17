@@ -7,10 +7,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <link rel="stylesheet" type="text/css" href="css/tabela4.css" />
+  <script src="webjars/jquery/3.3.1/jquery.min.js"></script>
+  <script src="webjars/bootstrap/4.4.1-1/js/bootstrap.min.js"></script>
+  <script src="webjars/chartjs/2.9.3/Chart.min.js"></script>
+  <script src="/js/allwykres.js"></script>
+    <script src="/js/divider.js"></script>
+
 <title>Wszystkie rekordy</title>
 </head>
 <body>
+<div>
+<canvas id="myChart" style="position: relative; height:40vh; width:80vw"></canvas>
+</div>
 <div align="center">
+
 
 	<table class="blueTable">
 	<tr>
@@ -30,7 +40,7 @@
 	
 
 
-							<table class="greenTable">
+							<table  id="divider" class="greenTable">
 								<tr>
 									<th>ID</th>
 									<th>maszyna</th>
