@@ -15,17 +15,18 @@
 			
 			 	results.forEach(function(e) {
 			      labels.push(e.material);
-			      data.push(parseInt(e.opis)/parseInt(e.norma)*100);
+			      data.push(parseInt(parseInt(e.opis)/parseInt(e.norma)*100));
 			      
-			      var options = {				
-					      tooltips: {enabled: false},
-					      hover: {mode: null},
-					      showTooltips: false,
-								 };
+			    // var options = {				
+					 //  tooltips: {enabled: false},
+					 //  hover: {mode: null},
+					  // showTooltips: false,
+						//};
+			  			     
 			 
 			  	var config = {
 						   type: 'bar',
-						   options: options,
+						   //options: options,						  
 			  			   data: {
 						   labels: labels,
 						   datasets: [{

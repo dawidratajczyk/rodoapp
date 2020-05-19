@@ -6,11 +6,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <link rel="stylesheet" type="text/css" href="css/tabela4.css" />
+<link href="webjars/bootstrap/4.4.1-1/css/bootstrap.min.css"
+        rel="stylesheet">
+  <script src="webjars/jquery/3.3.1/jquery.js"></script>
   <script src="webjars/jquery/3.3.1/jquery.min.js"></script>
   <script src="webjars/bootstrap/4.4.1-1/js/bootstrap.min.js"></script>
+  <script src="webjars/bootstrap/4.4.1-1/css.bootstrap.min.css"></script>
+    <script src="webjars/datatables/1.9.4/media/js/jquery.dataTables.min.js"></script>
   <script src="webjars/chartjs/2.9.3/Chart.min.js"></script>
   <script src="/js/allwykres.js"></script>
+  <script src="/js/divider.js">  </script>
+  
 
 
 <title>Wszystkie rekordy</title>
@@ -22,7 +28,7 @@
 <div align="center">
 
 
-	<table class="blueTable">
+	<table>
 	<tr>
 	<th>
 	<%--<form action="<c:url value="/dodaj" />" method="GET" > --%>
@@ -40,7 +46,8 @@
 	
 
 
-							<table  id="divider" class="greenTable">
+							<table  id="myTable" class="table table-striped table-responsive-md btn-table">
+							<thead>
 								<tr>
 									<th>ID</th>
 									<th>maszyna</th>
@@ -52,7 +59,8 @@
 									<th>ustawienia</th>
 	
 								</tr>
-							
+							</thead>
+							<tbody>
 							<c:forEach items="${nowaLista}" var="produkcja">
 							<tr>
 								<td>${produkcja.id}</td>
@@ -69,6 +77,7 @@
 							
 							</tr>
 							</c:forEach>
+							</tbody>
 							
 							</table>
 

@@ -1,6 +1,5 @@
 $(document).ready(function() {
-    $('#divider').DataTable( {
+    $('#myTable').DataTable( {
         responsive: true,
-        "pageLength": 10
     } );
 } );

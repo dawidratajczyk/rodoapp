@@ -29,15 +29,21 @@
 
 
 							<table class="greenTable">
+							<thead>
 								<tr>
+									<th>id</th>
 									<th>maszyna</th>
 									<th>obszar</th>
+									<th>ustawienia</th>
 								</tr>
-							
+							</thead>
 							<c:forEach items="${maszyny}" var="maszyny">
 							<tr>
+								<td>${maszyny.id}</td>
 								<td>${maszyny.maszyna}</td>
 								<td>${maszyny.obszar}</td>
+								<td><a href="/deletemachine?id=${maszyny.id}"  style="text-decoration:none">usun</a>
+								</td>
 							
 							</tr>
 							</c:forEach>
