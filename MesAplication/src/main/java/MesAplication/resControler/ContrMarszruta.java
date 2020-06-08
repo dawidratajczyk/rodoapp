@@ -98,7 +98,7 @@ return dane;
 @RequestMapping(value = "/saveprod", method = RequestMethod.POST)
 public String saveKod(@ModelAttribute("produkcja") produkcja produkcja) {
     crud.save(produkcja);
-    return "redirect:/show";
+    return "redirect:/";
 }
 
 

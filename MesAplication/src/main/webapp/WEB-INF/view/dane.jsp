@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=iISO-8859-2"
-    pageEncoding="ISO-8859-2"%>
+<%@ page contentType="text/html; charset=UTF-8" %>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <%@ page isELIgnored="false"%>   
 <!DOCTYPE html>
@@ -18,7 +17,7 @@
 
 							<table class="blueTable">
 								<tr>
-									<th>materiał</th>
+									<th>materiaĹ</th>
 									<th>Operacja</th>
 									<th>Czas</th>
 									<th>Norma</th>
