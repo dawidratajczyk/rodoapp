@@ -5,24 +5,18 @@
 		 var ctx = myChart.getContext('2d');
 		 ctx.canvas.width = 300;
 		 ctx.canvas.height = 50;
-		 var URL =	 window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port: '')+ '/';
-		 var JsonData = $.ajax({
-			 type: 'GET',
-			 datatype: 'json',
-			 url: URL + "test2",
+		 var table = document.querySelector('myTable')
+		 
+		$('#myTable > tbody  > tr').each(function(i,el){
+			 labels.push($(this).find('td').eq(5).text())
+			 data.push($(this).find('td').eq(6).text()/$(this).find('td').eq(4).text())
+		 });
+		 
 
-		 }).done(function(results){
-			
-			 	results.forEach(function(e) {
-			      labels.push(e.material);
-			      data.push(parseInt(parseInt(e.opis)/parseInt(e.norma)*100));
-			      
-			    // var options = {				
-					 //  tooltips: {enabled: false},
-					 //  hover: {mode: null},
-					  // showTooltips: false,
-						//};
-			  			     
+		 console.log(labels)
+		 console.log(data)
+		
+	
 			 
 			  	var config = {
 						   type: 'bar',
@@ -50,10 +44,9 @@
 		
 			 
 		 })
-		 })
+
 
 		 	
 		
 
   
-  })

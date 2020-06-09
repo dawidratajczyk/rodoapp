@@ -9,11 +9,12 @@
 <link href="webjars/bootstrap/4.4.1-1/css/bootstrap.min.css" rel="stylesheet">
   <script src="webjars/jquery/3.3.1/jquery.min.js"></script>
   <script src="webjars/bootstrap/4.4.1-1/js/bootstrap.min.js"></script>
-  <script src="webjars/datatables/1.9.4/media/js/jquery.dataTables.min.js"></script>
+   <%--  <script src="webjars/datatables/1.9.4/media/js/jquery.dataTables.min.js"></script>
   <script src="webjars/datatables/1.9.4/media/css/jquery.dataTables.css"></script>
-  <script src="webjars/datatables/1.9.4/media/css/jquery.dataTables_themeroller.css"></script>
+  <script src="webjars/datatables/1.9.4/media/css/jquery.dataTables_themeroller.css"></script>--%>
   <script src="webjars/chartjs/2.9.3/Chart.min.js"></script>
-  <script src="/js/allwykres.js"></script>
+  <%-- <script src="/js/allwykres.js"></script>--%>
+  <script src="/js/mainchart.js"></script>
   <%--<script src="/js/divider.js">  </script> --%>
   
 
@@ -88,11 +89,12 @@
 <td> strony : </td>
 <c:forEach items="${pglist}" var = "page">
 <td>
-<a href="/show?pages=${page}"  style="text-decoration:none">${page}</a>
+<a href="/show?pages=${page}"  style="text-decoration:none" class="button">${page}</a>
 </td>
 </c:forEach>
 </tr>
 </table>
+${pgcurrent } z ${pgcount }
 </div>
 
 </body>

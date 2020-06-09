@@ -64,11 +64,12 @@ public class marszrutaServis {
 		
 		//ta czesc liczy, ile nalezy wyświetlić stron
 		int pgcount = crudProd.findAll(ShowPages).getTotalPages();
+		int pgcurrent = pages;
 		List<Integer> pglist = new ArrayList<Integer>();
 		
-		if (pgcount > 6) {
-			for (int i = (pgcount -2); i < (pgcount + 3) ;i++) {
-					if (i >= 0 & i <= pgcount) {
+		if (pgcount >= 6) {
+			for (int i = (pages -4); i < (pages + 4) ;i++) {
+					if (i >= 0 && i < pgcount) {
 						pglist.add(i);						
 					}
 			}
@@ -86,6 +87,8 @@ public class marszrutaServis {
 		
 		mav.addObject("pglist",pglist);
 		mav.addObject("nowaLista",nowaLista);
+		mav.addObject("pgcount",pgcount);
+		mav.addObject("pgcurrent",pgcurrent);
 		mav.setViewName("all");
 		
 		
