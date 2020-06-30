@@ -6,15 +6,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="webjars/bootstrap/4.4.1-1/css/bootstrap.min.css" rel="stylesheet">
-  <script src="webjars/jquery/3.3.1/jquery.min.js"></script>
-  <script src="webjars/bootstrap/4.4.1-1/js/bootstrap.min.js"></script>
+<link href="/mes/webjars/bootstrap/4.4.1-1/css/bootstrap.min.css" rel="stylesheet">
+  <script src="/mes/webjars/jquery/3.3.1/jquery.min.js"></script>
+  <script src="/mes/webjars/bootstrap/4.4.1-1/js/bootstrap.min.js"></script>
    <%--  <script src="webjars/datatables/1.9.4/media/js/jquery.dataTables.min.js"></script>
   <script src="webjars/datatables/1.9.4/media/css/jquery.dataTables.css"></script>
   <script src="webjars/datatables/1.9.4/media/css/jquery.dataTables_themeroller.css"></script>--%>
-  <script src="webjars/chartjs/2.9.3/Chart.min.js"></script>
+  <script src="/mes/webjars/chartjs/2.9.3/Chart.min.js"></script>
   <%-- <script src="/js/allwykres.js"></script>--%>
-  <script src="/js/mainchart.js"></script>
+  <script src="/mes/js/mainchart.js"></script>
   <%--<script src="/js/divider.js">  </script> --%>
   
 
@@ -70,9 +70,9 @@
 								<td>${produkcja.norma}</td>
 								<td>${produkcja.material}</td>
 								<td>${produkcja.opis}</td>
-								<td><a href="/edit?id=${produkcja.id}"  style="text-decoration:none">edytuj</a>
+								<td><a href="/mes/edit?id=${produkcja.id}"  style="text-decoration:none">edytuj</a>
 										&nbsp;&nbsp;&nbsp;
-									<a href="/delete?id=${produkcja.id}"  style="text-decoration:none">usun</a>
+									<a href="/mes/delete?id=${produkcja.id}"  style="text-decoration:none">usun</a>
 								</td>
 							
 							</tr>
@@ -87,11 +87,13 @@
 <table>
 <tr>
 <td> strony : </td>
+<td><a href="/mes/show?pages=1"  style="text-decoration:none" class="button">1...</a> </td>
 <c:forEach items="${pglist}" var = "page">
 <td>
-<a href="/show?pages=${page}"  style="text-decoration:none" class="button">${page}</a>
+<a href="/mes/show?pages=${page}"  style="text-decoration:none" class="button">${page}</a>
 </td>
 </c:forEach>
+<td><a href="/mes/show?pages=${pglast}"  style="text-decoration:none" class="button">... ${pglast}</a> </td>
 </tr>
 </table>
 ${pgcurrent } z ${pgcount }

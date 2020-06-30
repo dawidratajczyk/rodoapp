@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 
 
@@ -25,11 +26,18 @@ public class produkcja  {
 //@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "users_seq_gen")
 //@SequenceGenerator(name = "users_seq_gen", sequenceName = "users_id_seq")
 long id;
+
+@NotNull
 String maszyna;
+@NotNull
 String operacja;
+@NotNull
 String czas;
+@NotNull
 String material;
+@NotNull
 String opis;
+@NotNull
 String norma;
 
 

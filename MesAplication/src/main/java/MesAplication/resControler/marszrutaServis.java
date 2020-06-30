@@ -2,7 +2,6 @@ package MesAplication.resControler;
 
 
 
-import java.io.Console;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -10,6 +9,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -44,39 +44,38 @@ public class marszrutaServis {
 		return Crud.findAll();
 	}
 	
-	//@GetMapping("/show")	
-	//public ModelAndView showall(){
-	//	ModelAndView mav = new ModelAndView();
-	//	List<produkcja> nowaLista = crudProd.findAll();
-	//	mav.addObject("nowaLista",nowaLista);
-	//	mav.setViewName("all");
-	//	return mav;
-	//}
-	
+
 	//werja ze stronicowaniem
 	@GetMapping("/show")	
-	public ModelAndView showall(@RequestParam(required = false,defaultValue = "0") int pages , @RequestParam(required = false,defaultValue = "5") int count){
-		Pageable ShowPages = PageRequest.of(pages, count);		
+	public ModelAndView showall(@RequestParam(required = false,defaultValue = "1") int pages , @RequestParam(required = false,defaultValue = "5") int count){
 		ModelAndView mav = new ModelAndView();
 		
+		//Zmienne i ustawienia do stronicowania
+		Pageable ShowPages = PageRequest.of((pages-1), count,Sort.by("Id").descending());
 		List<produkcja> nowaLista = crudProd.findAll(ShowPages).getContent();
 		
 		
 		//ta czesc liczy, ile nalezy wyświetlić stron
 		int pgcount = crudProd.findAll(ShowPages).getTotalPages();
+		int pglast = pgcount;
 		int pgcurrent = pages;
 		List<Integer> pglist = new ArrayList<Integer>();
 		
-		if (pgcount >= 6) {
-			for (int i = (pages -4); i < (pages + 4) ;i++) {
-					if (i >= 0 && i < pgcount) {
-						pglist.add(i);						
-					}
+		
+		
+		//obliczanie ilosci widocznych stron
+		if (pgcount >= 10) { 
+			for (int i = (pages -2); i < (pages + 1) ;i++) {
+					if (i >= 1 && i < (pgcount-1)) { //iteracja celowo pomija pierwsza oraz ostatnia strone, aby byly zawsze wyswietlane jako warunki brzegowe
+					
+						pglist.add(i+1);						
+					} 
+					
 			}
 		} else {
 			
-			for (int i = 0; i < pgcount;i++) {
-				pglist.add(i);
+			for (int i = 1; i < pgcount-1;i++) {
+				pglist.add(i+1);
 			}
 		}
 		
@@ -84,7 +83,7 @@ public class marszrutaServis {
 		
 	
 		
-		
+		mav.addObject("pglast",pglast);
 		mav.addObject("pglist",pglist);
 		mav.addObject("nowaLista",nowaLista);
 		mav.addObject("pgcount",pgcount);
@@ -120,12 +119,6 @@ public class marszrutaServis {
 	   }
 
 	
-	@RequestMapping("/test")
-	public String Test() {
-	
-
-	    return "test";
-	   }
 
 	
 	

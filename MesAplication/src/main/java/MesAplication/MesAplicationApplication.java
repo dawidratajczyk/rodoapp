@@ -2,6 +2,7 @@ package MesAplication;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.orm.jpa.JpaVendorAdapter;
@@ -9,7 +10,7 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
 @ComponentScan
 @SpringBootApplication
-public class MesAplicationApplication {
+public class MesAplicationApplication extends SpringBootServletInitializer  {
 
 	
 	

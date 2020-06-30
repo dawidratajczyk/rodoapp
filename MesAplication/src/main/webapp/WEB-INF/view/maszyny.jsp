@@ -7,6 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
   <link rel="stylesheet" type="text/css" href="css/tabela4.css" />
+  <link href="/mes/webjars/bootstrap/4.4.1-1/css/bootstrap.min.css" rel="stylesheet">
 <title>Wszystkie rekordy</title>
 </head>
 <body>
@@ -28,7 +29,7 @@
 	
 
 
-							<table class="greenTable">
+							<table class="table table-striped table-responsive-md btn-table">
 							<thead>
 								<tr>
 									<th>id</th>
@@ -42,7 +43,7 @@
 								<td>${maszyny.id}</td>
 								<td>${maszyny.maszyna}</td>
 								<td>${maszyny.obszar}</td>
-								<td><a href="/deletemachine?id=${maszyny.id}"  style="text-decoration:none">usun</a>
+								<td><a href="/mes/deletemachine?id=${maszyny.id}"  style="text-decoration:none">usun</a>
 								</td>
 							
 							</tr>
