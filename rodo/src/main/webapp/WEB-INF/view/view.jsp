@@ -81,7 +81,9 @@
 					
 					<li class="clearButton"><a href="#clear">Wyczyść</a></li>
 					
-					</ul>--%>
+					</ul>--%>	
+					
+									
 					
 					<div class="sig sigWrapper" style="height:auto;">
 					
@@ -89,7 +91,7 @@
 					
 					<canvas class="pad" width="400" height="250"></canvas>
 					
-					<input type="hidden" name="output" class="output" value="${rodo.podpis}">
+					<input type="hidden" name="output" class="output">
 					
 					</div>
 					
@@ -111,15 +113,34 @@
 	
 	  $('#smoothed').signaturePad({
 	
-	    drawOnly:true,
+	    drawOnly:false,
 	
-	    drawBezierCurves:true,
+	    drawBezierCurves:false,
+	    
+	    displayOnly :true,
+	    
+	    penWidth : 1,
+	    
+		penColour :'#12312',
+		
+		
+
+
 	
 	    lineTop:200
-	
-	  });
+	    
+	    
+	    
+	  })
 	
 	});
+	
+
+    $(document).ready(function() {
+      $('.sigPad').signaturePad({displayOnly:true}).regenerate(${rodo.podpis});
+    });
+  
+	
 
 </script>
 
