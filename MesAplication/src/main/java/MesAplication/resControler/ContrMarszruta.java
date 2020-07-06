@@ -4,8 +4,12 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -96,9 +100,18 @@ return dane;
 
 
 @RequestMapping(value = "/saveprod", method = RequestMethod.POST)
-public String saveKod(@ModelAttribute("produkcja") produkcja produkcja) {
+public String saveKod(@ModelAttribute("produkcja") produkcja produkcja, BindingResult BinResult) {
+	if (BinResult.hasErrors()) {
+		   List<FieldError> errors = BinResult.getFieldErrors();
+		    for (FieldError error : errors ) {
+		        System.out.println (error.getObjectName() + " - " + error.getDefaultMessage());
+		    }
+	return "error";
+	}
+	
     crud.save(produkcja);
     return "redirect:/";
+	
 }
 
 

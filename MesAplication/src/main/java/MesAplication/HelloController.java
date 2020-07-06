@@ -11,6 +11,9 @@ public class HelloController {
 	
 	@RequestMapping("/")
 	public RedirectView index() {
+		
+
+		
 		return new RedirectView("show");
 	}
 }
