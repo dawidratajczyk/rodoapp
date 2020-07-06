@@ -1,5 +1,6 @@
 package pl.mmstomatologia.classes;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
+
 import pl.mmstomatologia.classes.entities.rodo;
 import pl.mmstomatologia.classes.repository.crudRodo;
 
@@ -17,6 +20,14 @@ import pl.mmstomatologia.classes.repository.crudRodo;
 public class main {
 	@Autowired
 	crudRodo crud;
+	
+	@RequestMapping("/")
+	public RedirectView index() {
+		
+
+		
+		return new RedirectView("lista");
+	}
 	
 	@GetMapping("/main")
 	public String welcomeView() {
@@ -39,7 +50,7 @@ public class main {
 	public String saveRodo(@ModelAttribute rodo rodo) {
 		crud.save(rodo);
 		
-		return "redirect:/sign";
+		return "redirect:/lista";
 		
 	}
 	
@@ -54,6 +65,17 @@ public class main {
 		
 		return mv;
 				
+	}
+	
+	
+	@GetMapping("/lista")
+	public ModelAndView showAll() {
+		ModelAndView mv = new ModelAndView();
+		List<rodo> lista = crud.findAll();
+		mv.addObject("lista", lista);
+		mv.setViewName("lista");
+		
+		return mv;
 	}
 	
 

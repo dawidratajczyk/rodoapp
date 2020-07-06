@@ -5,19 +5,21 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Podgląd RODO</title>
 
-<link href="/css/jquery.signaturepad.css" rel="stylesheet">
+
+
+<link href="/rodo/css/jquery.signaturepad.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="css/form.css" />
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
-<%-- <script src="/js/numeric-1.2.6.min.js"></script> --%>
+<script src="/rodo/js/jquery.signaturepad.js"></script>
 
-<%--<script src="/js/bezier.js"></script> --%>
 
-<script src="/js/jquery.signaturepad.js"></script>
+<script src="/rodo/js/json2.min.js"></script>
 
-<script src="/js/json2.min.js"></script>
 
 
 </head>
@@ -32,7 +34,7 @@
 			<div align="center" id="rodo">
 						<p>Ja, niżej podpisana/ny</p>
 			
-				<h2>${rodo.pacjent}</h2>
+				<p><h3>${rodo.pacjent}</h3>
 						<p>
 						Wyrażam zgodę na przetwarzanie moich danych osobowych w podanym niżej zakresie:</p>
 			
@@ -53,15 +55,16 @@
 						</p>
 			
 			
-				<p>Administratorem Danych jest:</p>
-				<h2>${rodo.firma}</h2>
+				<h2>Administratorem Danych jest:</h2>
+				<p><h3>${rodo.firma}</h3>
 			
 			
-						<p>Uwagi:</p>	
+						<h2>Uwagi:</h2>	
 			
 			
 			
-				<h2>${rodo.uwaga}</h2>
+				<p><h3>${rodo.uwaga}</h3>
+			
 			
 						<p>[cel	przetwarzania	danych	(np.
 						
@@ -74,16 +77,6 @@
 			
 					<div class="sigPad" id="smoothed" style="width:404px;">
 					<br><br>
-					
-					<%--<ul class="sigNav">
-					
-					 <li class="drawIt"><a href="#draw-it" >Obszar podpisu</a></li>
-					
-					<li class="clearButton"><a href="#clear">Wyczyść</a></li>
-					
-					</ul>--%>	
-					
-									
 					
 					<div class="sig sigWrapper" style="height:auto;">
 					
@@ -100,7 +93,7 @@
 			<table>
 			
 								<tr>
-			                   <td><input type="button" value="Wróć"></td>
+			                   <td><input type="button" onclick="history.back();" value="Wróć"></td>
 			                   </tr>
 			
 			</table>
@@ -137,67 +130,14 @@
 	
 
     $(document).ready(function() {
-      $('.sigPad').signaturePad({displayOnly:true}).regenerate(${rodo.podpis});
+      $('.sigPad').signaturePad({displayOnly:true}).regenerate(${ rodo.podpis});
     });
   
-	
+
 
 </script>
 
 <style>
-#rodo {
-font-family: Georgia, serif;
-font-size: 20px;
-letter-spacing: 0.8px;
-word-spacing: 1.4px;
-color: #545454;
-font-weight: normal;
-text-decoration: none;
-font-style: normal;
-font-variant: normal;
-text-transform: none;
-}
-
-#main.h2 {
-font-family: Georgia, serif;
-font-size: 20px;
-letter-spacing: 0.8px;
-word-spacing: 2.4px;
-color: #545454;
-font-weight: normal;
-text-decoration: none;
-font-style: italic;
-font-variant: normal;
-text-transform: none;
-}
-
-#main {
-font-family: Georgia, serif;
-font-size: 18px;
-letter-spacing: 2.4px;
-word-spacing: 2px;
-color: #545454;
-font-weight: 400;
-text-decoration: none;
-font-style: normal;
-font-variant: small-caps;
-text-transform: none;
-margin-left: auto;
-margin-right: auto;
-width: 600px;
-text-align: center;
-padding:20px;
-
-background: #EFEFEF;
-background: -moz-linear-gradient(-45deg, #EFEFEF 0%, #FFFFFF 50%, #D8D8D8 100%);
-background: -webkit-linear-gradient(-45deg, #EFEFEF 0%, #FFFFFF 50%, #D8D8D8 100%);
-background: linear-gradient(135deg, #EFEFEF 0%, #FFFFFF 50%, #D8D8D8 100%);
-
--webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
-
-}
-
 
 </style>
 
