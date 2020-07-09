@@ -9,13 +9,16 @@
 <link href="/mes/webjars/bootstrap/4.4.1-1/css/bootstrap.min.css" rel="stylesheet">
   <script src="/mes/webjars/jquery/3.3.1/jquery.min.js"></script>
   <script src="/mes/webjars/bootstrap/4.4.1-1/js/bootstrap.min.js"></script>
-   <%--  <script src="webjars/datatables/1.9.4/media/js/jquery.dataTables.min.js"></script>
+  <script src="/mes/webjars/chartjs/2.9.3/Chart.min.js"></script>
+  <script src="/mes/js/mainchart.js"></script>
+  <script src="/mes/js/roundchart.js"></script>
+  
+  
+  <%--<script src="/js/divider.js">  </script> --%>
+  <%--  <script src="webjars/datatables/1.9.4/media/js/jquery.dataTables.min.js"></script>
   <script src="webjars/datatables/1.9.4/media/css/jquery.dataTables.css"></script>
   <script src="webjars/datatables/1.9.4/media/css/jquery.dataTables_themeroller.css"></script>--%>
-  <script src="/mes/webjars/chartjs/2.9.3/Chart.min.js"></script>
   <%-- <script src="/js/allwykres.js"></script>--%>
-  <script src="/mes/js/mainchart.js"></script>
-  <%--<script src="/js/divider.js">  </script> --%>
   
 
 
@@ -23,8 +26,13 @@
 </head>
 <body>
 <div>
-<canvas id="myChart" style="position: relative; height:20vh; width:40vw"></canvas>
+
+<canvas id="myChart"></canvas>
+<canvas id="roundChart"></canvas>
+
 </div>
+
+
 <div align="center">
 
 
@@ -100,4 +108,15 @@ ${pgcurrent } z ${pgcount }
 </div>
 
 </body>
+<Style>
+canvas#myChart {
+  width:57vw!important;
+  height:40vh!important;
+  float:left;
+}
+canvas#roundChart {
+  width: 40vw!important;
+  height:40vh!important;
+}
+</Style>
 </html>

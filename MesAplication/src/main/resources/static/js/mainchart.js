@@ -3,8 +3,8 @@
 	  	 var labels = []; 
 		 var data = [];
 		 var ctx = myChart.getContext('2d');
-		 ctx.canvas.width = 300;
-		 ctx.canvas.height = 50;
+		 /*ctx.canvas.width = 150;
+		 ctx.canvas.height = 50;*/
 		 var table = document.querySelector('myTable')
 		 
 		$('#myTable > tbody  > tr').each(function(i,el){
@@ -16,13 +16,16 @@
 		 console.log(labels)
 		 console.log(data)
 		
-	
+
 			 
 			  	var config = {
-						   type: 'bar',
-						   //options: options,						  
+						   type: 'bar',					  
 			  			   data: {
 						   labels: labels,
+							 options: {
+								    responsive: true, 
+								    maintainAspectRatio: false
+								},
 						   datasets: [{
 						         label: 'Wykres ilości',
 						         data: data,
