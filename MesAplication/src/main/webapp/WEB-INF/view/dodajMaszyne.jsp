@@ -8,10 +8,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <link rel="stylesheet" type="text/css" href="css/tabela4.css" />
+  <link rel="stylesheet" type="text/css" href="css/main.css" />
 <title>Dodaj nowa maszyne</title>
 </head>
 <body>
-    <div align="center">
+    <div id="main" align="center">
         <h2>Dodaj nowa maszyne</h2>
         <form:form action="saveMachine" method="post" modelAttribute="modelmaszyny">
             <table border="0" cellpadding="5" class="greenTable">

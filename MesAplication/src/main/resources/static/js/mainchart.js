@@ -25,23 +25,34 @@
 						   type: 'bar',					  
 			  			   data: {
 						   labels: labels,
-							 options: {
-								    responsive: true, 
-								    maintainAspectRatio: false,
-							        legend: {
-							            display: true,
-							            labels: {
-							                fontColor: 'rgb(255, 99, 132)',
-							                	fontSize : 14
-							            }
-							        }
-								},
+						   						
 						   datasets: [{
 						         label: 'Wykres wydajności maszyny',
 						         data: data,
 						         backgroundColor: backgroundColor
 						      }]
-						   }
+						   },
+						   options: {
+						        plugins: {
+						            datalabels: {
+						            	 formatter: function(value, context) {
+						            		 return context.dataIndex + ': ' + Math.round(value*100) + '%';
+						            	 },
+						                color: 'white',
+						                labels: {
+						                    title: {
+						                        font: {
+						                            weight:'bold',
+						                            size: 25
+						                        }
+						                    },
+						                    value: {
+						                        color: 'green'
+						                    }
+						                }
+						            }
+						        }
+						    }
 			  			
 						
 			  	  

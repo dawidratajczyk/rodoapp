@@ -13,11 +13,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <link rel="stylesheet" type="text/css" href="css/tabela.css" />
+  <link rel="stylesheet" type="text/css" href="css/main.css" />
 <title>Dodaj nowy rekord</title>
 
 </head>
 <body>
-    <div align="center">
+    <div align="center" id="main">
         <h2>Nowy wpis</h2>
         <form:form action="saveprod" method="post" modelAttribute="marszruta">
             <table border="0" cellpadding="5" class="blueTable">

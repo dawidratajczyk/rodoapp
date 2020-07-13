@@ -6,12 +6,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <link rel="stylesheet" type="text/css" href="css/tabela.css" />
+  <link rel="stylesheet" type="text/css" href="css/main.css" />
 <title>Wszystkie dane</title>
 
 
 </head>
 <body>
-<div align="center">
+<div id="main" align="center">
 
 
 

@@ -12,6 +12,7 @@
   	<link href="/mes/webjars/bootstrap/4.4.1-1/css/bootstrap.min.css" rel="stylesheet">
 	<script src="/mes/webjars/bootstrap/4.4.1-1/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/tabela4.css" />
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
 
 	
   	<%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>--%>
@@ -19,7 +20,7 @@
 
 </head>
 <body>
-<div align="center">
+<div align="center" id="main">
 
 
 											

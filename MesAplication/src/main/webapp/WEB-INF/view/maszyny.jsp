@@ -7,10 +7,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
   <link rel="stylesheet" type="text/css" href="css/tabela4.css" />
   <link href="/mes/webjars/bootstrap/4.4.1-1/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/main.css" />
 <title>Wszystkie rekordy</title>
 </head>
 <body>
-<div align="center">
+<div align="center" id="main">
 	<table>
 	<tr>
 	<th>
