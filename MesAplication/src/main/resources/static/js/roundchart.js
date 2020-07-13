@@ -29,6 +29,12 @@
 						      }]
 						   },
 						   options: {
+							      legend: {
+							           display: true,
+							            labels: {
+							                fontSize: 25,
+							            }
+							        },
 						        plugins: {
 						            datalabels: {
 						                color: 'white',
@@ -40,7 +46,7 @@
 						                        }
 						                    },
 						                    value: {
-						                        color: 'green'
+						                    	display: false
 						                    }
 						                }
 						            }

@@ -33,10 +33,14 @@
 						      }]
 						   },
 						   options: {
+							   legend: {
+						            display: false,
+						        },
 						        plugins: {
 						            datalabels: {
 						            	 formatter: function(value, context) {
-						            		 return context.dataIndex + ': ' + Math.round(value*100) + '%';
+						            		 return  Math.round(value*100) + '%';
+						            		 /*return context.chart.data.labels + ' : ' + Math.round(value*100) + '%';*/
 						            	 },
 						                color: 'white',
 						                labels: {
@@ -47,10 +51,25 @@
 						                        }
 						                    },
 						                    value: {
-						                        color: 'green'
+						                    	display: false
 						                    }
 						                }
 						            }
+						        },
+						        legend: {
+						            display: false
+						        },
+						        scales: {
+						            xAxes: [{
+						                ticks: {
+						                    fontSize: 25
+						                }
+						            }],
+						            yAxes: [{
+						                ticks: {
+						                    display: false
+						                }
+						            }]
 						        }
 						    }
 			  			
