@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <%@ page isELIgnored="false"%>   
 <!DOCTYPE html>
@@ -16,12 +15,12 @@
 	<tr>
 	<th>
 <form action="<c:url value="/dodajmaszyne" />" method="GET">
-    <input type="submit" value="Dodaj-Maszyne"/>    
+    <input type="submit" value="Dodaj maszyne"/>    
 </form>
 </th>
 <th>
 <form action="<c:url value="/show" />" method="GET">
-    <input type="submit" value="MenuGlowne"/>    
+    <input type="submit" value="Menu główne"/>    
 </form>
 </th>
 </tr>

@@ -14,17 +14,12 @@
   <script src="/mes/js/roundchart.js"></script>
   
   
-  <%--<script src="/js/divider.js">  </script> --%>
-  <%--  <script src="webjars/datatables/1.9.4/media/js/jquery.dataTables.min.js"></script>
-  <script src="webjars/datatables/1.9.4/media/css/jquery.dataTables.css"></script>
-  <script src="webjars/datatables/1.9.4/media/css/jquery.dataTables_themeroller.css"></script>--%>
-  <%-- <script src="/js/allwykres.js"></script>--%>
-  
-
 
 <title>Wszystkie rekordy</title>
 </head>
+
 <body>
+
 <div>
 
 <canvas id="myChart"></canvas>
@@ -49,6 +44,7 @@
 	    <input type="submit" value="ManagerMaszyn"/>    
 	</form>
 </th>
+
 </tr>
 	</table>
 	
@@ -110,11 +106,13 @@ ${pgcurrent } z ${pgcount }
 </body>
 <Style>
 canvas#myChart {
-  width:57vw!important;
+  position: relative;
+  width:58vw!important;
   height:40vh!important;
   float:left;
 }
 canvas#roundChart {
+  position: relative;
   width: 40vw!important;
   height:40vh!important;
 }
