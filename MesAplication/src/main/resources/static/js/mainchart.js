@@ -33,15 +33,25 @@
 						      }]
 						   },
 						   options: {
+							   title: {
+						            display: true,
+						            fontSize:25,
+						            text: 'Wykres wydajności',
+						            
+						        },
 							   legend: {
 						            display: false,
 						        },
+						        tooltips: { 
+						        	bodyFontSize: 20 
+						        	},
 						        plugins: {
 						            datalabels: {
 						            	 formatter: function(value, context) {
 						            		 return  Math.round(value*100) + '%';
 						            		 /*return context.chart.data.labels + ' : ' + Math.round(value*100) + '%';*/
 						            	 },
+						            	clamp:true,
 						                color: 'white',
 						                labels: {
 						                    title: {
@@ -52,6 +62,7 @@
 						                    },
 						                    value: {
 						                    	display: false
+						                    
 						                    }
 						                }
 						            }
@@ -68,6 +79,7 @@
 						            yAxes: [{
 						                ticks: {
 						                    display: false
+						                    
 						                }
 						            }]
 						        }

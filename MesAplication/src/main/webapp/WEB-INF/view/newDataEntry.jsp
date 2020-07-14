@@ -1,4 +1,4 @@
-	<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
@@ -28,10 +28,10 @@
 								
 <form:form action="saveprod" method="post" modelAttribute="zapis">
 	<table class="greenTable" style="width:100%">
-	<%-- Pierwszy rekord, wybór fragmentu kodu --%>
+	<%-- Pierwszy rekord, wybÃ³r fragmentu kodu --%>
 	<tr>
 	<td>WPROWADZ FRAGMENT KODU</td>
-	<td><input type="text" id="fragment"></input></td>
+	<td ><input type="text" id="fragment" title="Wprowadz np. 22 i wyszukaj"/></td>
 	<td><button id="szukaj" type="button">szukaj</button></td>
 	</tr>
 	
@@ -46,7 +46,7 @@
 		</td>
 	</tr>
 	
-	<%-- trzeci rekord, wybór operacji --%>
+	<%-- trzeci rekord, wybÃ³r operacji --%>
 	<tr>
 		<td>OPERACJA</td>
 		<td>
@@ -77,7 +77,7 @@
 	
 	</tr>
 	
-		<%-- Piąty rekord - norma --%>
+		<%-- PiÄty rekord - norma --%>
 	<tr>
 		<td>NORMA</td>
 		<td>
@@ -103,4 +103,32 @@
 
 </div>
 </body>
+	<style>
+	/* Tooltip container */
+	.tooltip {
+	  position: relative;
+	  display: inline-block;
+	  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+	}
+	
+	/* Tooltip text */
+	.tooltip .tooltiptext {
+	  visibility: hidden;
+	  width: 120px;
+	  background-color: black;
+	  color: #fff;
+	  text-align: center;
+	  padding: 5px 0;
+	  border-radius: 6px;
+	 
+	  /* Position the tooltip text - see examples below! */
+	  position: absolute;
+	  z-index: 1;
+	}
+	
+	/* Show the tooltip text when you mouse over the tooltip container */
+	.tooltip:hover .tooltiptext {
+	  visibility: visible;
+	}
+	</style>
 </html>

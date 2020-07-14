@@ -29,12 +29,21 @@
 						      }]
 						   },
 						   options: {
+								   title: {
+							            display: true,
+							            fontSize:25,
+							            text: 'Wykres ilości',
+							            
+							        },
 							      legend: {
 							           display: true,
 							            labels: {
 							                fontSize: 25,
 							            }
 							        },
+							        tooltips: { 
+							        	bodyFontSize: 20 
+							        	},
 						        plugins: {
 						            datalabels: {
 						                color: 'white',
@@ -47,6 +56,7 @@
 						                    },
 						                    value: {
 						                    	display: false
+						                    	
 						                    }
 						                }
 						            }
