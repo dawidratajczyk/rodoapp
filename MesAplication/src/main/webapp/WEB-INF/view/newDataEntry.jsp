@@ -71,7 +71,7 @@
 	<tr>
 		<td>CZAS</td>
 		<td>
-		<form:select id ="czas" path="czas"></form:select>
+		<form:select id ="czas" path="czas" style="background-color:#e6e6e6"></form:select>
 		</td>
 	
 	
@@ -81,7 +81,7 @@
 	<tr>
 		<td>NORMA</td>
 		<td>
-		<form:select id ="norma" path="norma"></form:select>
+		<form:select id ="norma" path="norma" style="background-color:#e6e6e6"></form:select>
 		</td>
 	
 	
