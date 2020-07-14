@@ -8,10 +8,10 @@
 		<version>2.2.4.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>MesAplication</artifactId>
+	<groupId>com.herokuapp</groupId>
+	<artifactId>measureperformance</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>MesAplication</name>
+	<name>measureperformance</name>
 	<packaging>war</packaging>
 	<description>Demo project for Spring Boot</description>
 
@@ -119,11 +119,11 @@
 		    <version>2.1.9.RELEASE</version>
 		</dependency>
 		
-		
+				
 		<dependency>
 		    <groupId>com.heroku.sdk</groupId>
 		    <artifactId>heroku-maven-plugin</artifactId>
-		    <version>3.0.2</version>
+		    <version>3.0.3</version>
 		</dependency>
 			
 				
@@ -147,6 +147,16 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
       </plugin>
+      
+      <plugin>
+        <groupId>com.heroku.sdk</groupId>
+        <artifactId>heroku-maven-plugin</artifactId>
+        <version>3.0.3</version>
+        <configuration>
+        <appName>measureperformance</appName>
+        </configuration>
+      </plugin>
+      
     </plugins>
   </build>
 
