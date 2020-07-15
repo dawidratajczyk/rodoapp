@@ -8,15 +8,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Wszystkie rekordy</title>
-	<script src="/mes/webjars/jquery/3.3.1/jquery.min.js"></script>
-  	<link href="/mes/webjars/bootstrap/4.4.1-1/css/bootstrap.min.css" rel="stylesheet">
-	<script src="/mes/webjars/bootstrap/4.4.1-1/js/bootstrap.min.js"></script>
+	<script src="/webjars/jquery/3.3.1/jquery.min.js"></script>
+  	<link href="/webjars/bootstrap/4.4.1-1/css/bootstrap.min.css" rel="stylesheet">
+	<script src="/webjars/bootstrap/4.4.1-1/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/tabela4.css" />
 	<link rel="stylesheet" type="text/css" href="css/main.css" />
 
 	
   	<%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>--%>
-	<script src="/mes/js/dane.js"></script>
+	<script src="/js/dane.js"></script>
 
 </head>
 <body>

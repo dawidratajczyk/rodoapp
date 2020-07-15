@@ -6,12 +6,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="/mes/webjars/bootstrap/4.4.1-1/css/bootstrap.min.css" rel="stylesheet">
-  <script src="/mes/webjars/jquery/3.3.1/jquery.min.js"></script>
-  <script src="/mes/webjars/bootstrap/4.4.1-1/js/bootstrap.min.js"></script>
-  <script src="/mes/webjars/chartjs/2.9.3/Chart.min.js"></script>
-  <script src="/mes/js/mainchart.js"></script>
-  <script src="/mes/js/roundchart.js"></script>
+<link href="/webjars/bootstrap/4.4.1-1/css/bootstrap.min.css" rel="stylesheet">
+  <script src="/webjars/jquery/3.3.1/jquery.min.js"></script>
+  <script src="/webjars/bootstrap/4.4.1-1/js/bootstrap.min.js"></script>
+  <script src="/webjars/chartjs/2.9.3/Chart.min.js"></script>
+  <script src="/js/mainchart.js"></script>
+  <script src="js/roundchart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>
   <link rel="stylesheet" type="text/css" href="css/main.css" />
@@ -43,8 +43,8 @@
 	</form>
 	</th>
 <th>
-	<form action="<c:url value="/maszyny" />" method="GET">
-	    <input type="submit" value="ManagerMaszyn"/>    
+	<form action="<c:url value="/maszyny" />" method="GET" style="padding-left:20px">
+	    <input type="submit" value="Manager Maszyn"/>    
 	</form>
 </th>
 
@@ -77,9 +77,9 @@
 								<td>${produkcja.norma}</td>
 								<td>${produkcja.material}</td>
 								<td>${produkcja.opis}</td>
-								<td><a href="/mes/edit?id=${produkcja.id}"  style="text-decoration:none">edytuj</a>
+								<td><a href="/edit?id=${produkcja.id}"  style="text-decoration:none">edytuj</a>
 										&nbsp;&nbsp;&nbsp;
-									<a href="/mes/delete?id=${produkcja.id}"  style="text-decoration:none">usun</a>
+									<a href="/delete?id=${produkcja.id}"  style="text-decoration:none">usun</a>
 								</td>
 							
 							</tr>
@@ -94,13 +94,13 @@
 <table>
 <tr>
 <td> strony : </td>
-<td><a href="/mes/show?pages=1"  style="text-decoration:none" class="button">1...</a> </td>
+<td><a href="/show?pages=1"  style="text-decoration:none" class="button">1...</a> </td>
 <c:forEach items="${pglist}" var = "page">
 <td>
-<a href="/mes/show?pages=${page}"  style="text-decoration:none" class="button">${page}</a>
+<a href="/show?pages=${page}"  style="text-decoration:none" class="button">${page}</a>
 </td>
 </c:forEach>
-<td><a href="/mes/show?pages=${pglast}"  style="text-decoration:none" class="button">... ${pglast}</a> </td>
+<td><a href="/show?pages=${pglast}"  style="text-decoration:none" class="button">... ${pglast}</a> </td>
 </tr>
 </table>
 ${pgcurrent } z ${pgcount }
@@ -111,13 +111,13 @@ ${pgcurrent } z ${pgcount }
 canvas#myChart {
   position: relative;
   width:58vw!important;
-  height:40vh!important;
+  height:22vw!important;
   float:left;
 }
 canvas#roundChart {
   position: relative;
   width: 40vw!important;
-  height:40vh!important;
+  height:22vw!important;
 }
 </Style>
 </html>

@@ -1,6 +1,6 @@
   $(document).ready(function(){
 	 //var URL = 'http://localhost:8080/'
-		 var URL =	 window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port: '')+ '/mes/';
+		 var URL =	 window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port: '/');
 		 $('#szukaj').on('click', function(){
 		var kod = fragment.value;
 	 $.ajax({
