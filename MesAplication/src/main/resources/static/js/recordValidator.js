@@ -10,7 +10,7 @@ function checkform(){
 			opera == 0 || opera == null
 	
 	){
-		alert("Wybierz kod z listy, jeśli lista jest pusta to prawdopodobnie wpisany fragment kodu nie pasuje do żadnego wyniku")
+		alert("WWybierz kod z listy, jeśli lista jest pusta to prawdopodobnie wpisany fragment kodu nie pasuje do żadnego wyniku")
 		return false;
 }	else {
 	document.getElementById("saverec").submit();
