@@ -25,22 +25,22 @@ crudControlerDlaMaszyn crud;
 
 
 	
-	@GetMapping("/maszyny")
+	@GetMapping("/machines")
 	public ModelAndView showmachine() {
 	ModelAndView mv = new ModelAndView();
 	List<maszyny> listamaszyn = crud.findAll();
 	mv.addObject("maszyny", listamaszyn);
-	mv.setViewName("maszyny");
+	mv.setViewName("machines");
 	
 	
 	return mv;	
 	}
 	
-	@GetMapping("/dodajmaszyne")
+	@GetMapping("/addMachine")
 	public String newMachineAdd(Map<String,Object> model) {
 		maszyny maszyna = new maszyny();
 		model.put("modelmaszyny",maszyna);
-		return "dodajMaszyne";
+		return "addMachine";
 		
 	}
 	
@@ -48,7 +48,7 @@ crudControlerDlaMaszyn crud;
 	@RequestMapping(value = "/saveMachine", method = RequestMethod.POST)
 	public String SaveMachine(@ModelAttribute("modelmaszyny") maszyny maszyny){
 		crud.save(maszyny);
-		return "redirect:/maszyny";
+		return "redirect:/machines";
 	}
 	
 	
@@ -70,20 +70,22 @@ crudControlerDlaMaszyn crud;
 	
 
 	
-	@GetMapping("/ajaxtest")
-	public String testajax() {
-		
-		return "ajaxtest";
-	}
-	
 	@GetMapping("/deletemachine")
 	public String deletemachine(@RequestParam Long id) {
 		crud.deleteById(id);
 		//return "redirect:/";
-		return "redirect:/maszyny";	
+		return "redirect:/machines";	
 	}
 	
 	
+	
+	//Endpoint nieużywany, słuzy do testów
+		@GetMapping("/ajaxtest")
+		public String testajax() {
+			
+			return "ajaxtest";
+		}
+		
 	
 
 }

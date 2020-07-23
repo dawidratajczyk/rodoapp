@@ -42,10 +42,11 @@
 							            }
 							        },
 							        tooltips: { 
+							        	enabled: false,
 							        	bodyFontSize: 20 
 							        	},
 						        plugins: {
-						            datalabels: {
+						            datalabels: {				            
 						                color: 'white',
 						                labels: {
 						                    title: {

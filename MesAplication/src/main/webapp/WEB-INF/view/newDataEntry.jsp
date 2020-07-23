@@ -17,6 +17,7 @@
 	
   	<%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>--%>
 	<script src="/js/dane.js"></script>
+	<script src="/js/recordValidator.js"></script>
 
 </head>
 <body>
@@ -26,7 +27,7 @@
 											
 								
 								
-<form:form action="saveprod" method="post" modelAttribute="zapis">
+<form:form action="saveprod" method="post" modelAttribute="zapis" id="saverec">
 	<table class="greenTable" style="width:100%">
 	<%-- Pierwszy rekord, wybÃ³r fragmentu kodu --%>
 	<tr>
@@ -58,7 +59,7 @@
 	<tr>
 		<td>MASZYNA</td>
 		<td>
-		<form:select id ="maszyna" path="maszyna">
+		<form:select id ="machine" path="maszyna">
 		<c:forEach items="${maszyny}" var = "maszyny">
 		<form:option value="${maszyny.maszyna}" />
 		</c:forEach>
@@ -90,11 +91,11 @@
 		<%-- Szosty rekord - opis --%>
   	<tr>
                     <td>WYKONANO</td>
-                    <td><form:input path="opis" /></td>
+                    <td><form:input path="opis" id="quantity"/></td>
     </tr>    
 	
 	                <tr>
-                    <td colspan="2"><input type="submit" value="Zapisz">
+                    <td colspan="2"><input type="button" onclick="checkform();" value="Zapisz">
                    <input type="button" onclick="history.back();" value="Wstecz"></td>
 
                 </tr>      

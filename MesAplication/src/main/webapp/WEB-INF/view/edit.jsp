@@ -32,24 +32,24 @@
 		<td>ID:
 		</td>
 		<td>
-        <form:select id ="id" path="id">
+        <form:select id ="id" path="id" style="background-color:#e6e6e6">
 		<option>${produkcja.id}</option>																	
 		</form:select>
 		</td>
 	</tr>
 	<%-- Pierwszy rekord, wybór fragmentu kodu --%>
-	<tr>
+	<%--<tr>
 		<td>Wpisz fragment kodu</td>
 		<td><input type="text" id="fragment"></input></td>
-		<td><button id="szukaj" type="button">szukaj</button></td>
-	</tr>
+		<td><button id="szukaj" type="button">szukaj</button></td> 
+	</tr>--%>
 	
 
 	<%-- drugi rekord, wybor pelnego kodu --%>
 	<tr>
 		<td>wybierz kod</td>
 		<td>
-		<form:select id ="material" path="material">
+		<form:select id ="material" path="material" style="background-color:#e6e6e6">
 		<option>${produkcja.material}</option>																	
 		</form:select>
 		</td>
@@ -59,7 +59,7 @@
 	<tr>
 		<td>operacja</td>
 		<td>
-		<form:select id ="operacja" path="operacja">
+		<form:select id ="operacja" path="operacja" style="background-color:#e6e6e6">
 		<option>${produkcja.operacja}</option>
 		</form:select>
 		</td>
@@ -69,7 +69,7 @@
 	<tr>
 		<td>maszyna</td>
 		<td>
-		<form:select id ="maszyna" path="maszyna">
+		<form:select id ="maszyna" path="maszyna" style="background-color:#e6e6e6">
 		<option>${produkcja.maszyna}</option>
 		</form:select>	                    
 		</td>
@@ -80,7 +80,7 @@
 	<tr>
 		<td>czas</td>
 		<td>
-		<form:select id ="czas" path="czas">
+		<form:select id ="czas" path="czas" style="background-color:#e6e6e6">
 		<option>${produkcja.czas}</option>
 		</form:select>
 		</td>
@@ -92,7 +92,7 @@
 	<tr>
 		<td>norma</td>
 		<td>
-		<form:select id ="norma" path="norma">
+		<form:select id ="norma" path="norma" style="background-color:#e6e6e6">
 		<option>${produkcja.norma}</option>
 		</form:select>
 		</td>

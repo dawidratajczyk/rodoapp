@@ -43,6 +43,7 @@
 						            display: false,
 						        },
 						        tooltips: { 
+						        	enabled: false,
 						        	bodyFontSize: 20 
 						        	},
 						        plugins: {

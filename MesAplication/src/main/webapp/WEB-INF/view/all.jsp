@@ -39,11 +39,11 @@
 	<th>
 	<%--<form action="<c:url value="/dodaj" />" method="GET" > --%>
 	<form action="<c:url value="/addrecord" />" method="GET" >
-	    <input type="submit" value="Dodaj"/>    
+	    <input type="submit" value="Dodaj nowy wpis"/>    
 	</form>
 	</th>
 <th>
-	<form action="<c:url value="/maszyny" />" method="GET" style="padding-left:20px">
+	<form action="<c:url value="/machines" />" method="GET" style="padding-left:20px">
 	    <input type="submit" value="Manager Maszyn"/>    
 	</form>
 </th>
@@ -111,13 +111,13 @@ ${pgcurrent } z ${pgcount }
 canvas#myChart {
   position: relative;
   width:58vw!important;
-  height:22vw!important;
+  height:20vw!important;
   float:left;
 }
 canvas#roundChart {
   position: relative;
   width: 40vw!important;
-  height:22vw!important;
+  height:20vw!important;
 }
 </Style>
 </html>

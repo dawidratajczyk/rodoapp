@@ -15,12 +15,12 @@
 	<table>
 	<tr>
 	<th>
-<form action="<c:url value="/dodajmaszyne" />" method="GET">
+<form action="<c:url value="/addMachine" />" method="GET">
     <input type="submit" value="Dodaj maszyne"/>    
 </form>
 </th>
 <th>
-<form action="<c:url value="/show" />" method="GET">
+<form action="<c:url value="/show" />" method="GET" style="padding-left:20px">
     <input type="submit" value="Menu główne"/>    
 </form>
 </th>
