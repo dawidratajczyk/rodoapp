@@ -9,16 +9,16 @@
 
 
 
-<link href="/rodo/css/jquery.signaturepad.css" rel="stylesheet">
+<link href="/css/jquery.signaturepad.css" rel="stylesheet">
 
 <link rel="stylesheet" type="text/css" href="css/form.css" />
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
-<script src="/rodo/js/jquery.signaturepad.js"></script>
+<script src="/js/jquery.signaturepad.js"></script>
 
 
-<script src="/rodo/js/json2.min.js"></script>
+<script src="/js/json2.min.js"></script>
 
 
 
@@ -130,7 +130,7 @@
 	
 
     $(document).ready(function() {
-      $('.sigPad').signaturePad({displayOnly:true}).regenerate(${ rodo.podpis});
+      $('.sigPad').signaturePad({displayOnly:true}). regenerate(${ rodo.podpis});
     });
   
 

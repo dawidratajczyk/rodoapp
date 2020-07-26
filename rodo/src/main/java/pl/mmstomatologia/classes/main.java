@@ -26,7 +26,7 @@ public class main {
 		
 
 		
-		return new RedirectView("lista");
+		return new RedirectView("list");
 	}
 	
 	@GetMapping("/main")
@@ -50,7 +50,7 @@ public class main {
 	public String saveRodo(@ModelAttribute rodo rodo) {
 		crud.save(rodo);
 		
-		return "redirect:/lista";
+		return "redirect:/list";
 		
 	}
 	
@@ -68,12 +68,12 @@ public class main {
 	}
 	
 	
-	@GetMapping("/lista")
+	@GetMapping("/list")
 	public ModelAndView showAll() {
 		ModelAndView mv = new ModelAndView();
 		List<rodo> lista = crud.findAll();
 		mv.addObject("lista", lista);
-		mv.setViewName("lista");
+		mv.setViewName("list");
 		
 		return mv;
 	}

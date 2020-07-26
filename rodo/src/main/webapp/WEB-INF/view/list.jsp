@@ -8,7 +8,7 @@
 
   <link rel="stylesheet" type="text/css" href="css/tabela.css" />
   
-  <link href="/rodo/webjars/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/webjars/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
  
 
 <title>Wszystkie rekordy</title>
@@ -17,7 +17,7 @@
 		<div id="main">
 		
 		
-		<form method="get" action="/rodo/sign">
+		<form method="get" action="/sign">
 		    <button type="submit">Dodaj RODO!</button>
 		</form><br>
 				
@@ -29,7 +29,7 @@
 		<c:forEach items="${lista}" var="rodo">
 				
 				
-				<tr>	<td>${rodo.id}</td>		<td>${rodo.pacjent}</td>		<td><a href="/rodo/rodo?id=${rodo.id}"  style="text-decoration:none">pokaż</a></td>						</tr>
+				<tr>	<td>${rodo.id}</td>		<td>${rodo.pacjent}</td>		<td><a href="/rodo?id=${rodo.id}"  style="text-decoration:none">pokaż</a></td>						</tr>
 	
 				
 		</c:forEach>		
