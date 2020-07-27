@@ -29,7 +29,7 @@
 		<c:forEach items="${lista}" var="rodo">
 				
 				
-				<tr>	<td>${rodo.id}</td>		<td>${rodo.pacjent}</td>		<td><a href="/rodo?id=${rodo.id}"  style="text-decoration:none">pokaż</a></td>						</tr>
+				<tr>	<td>${rodo.id}</td>		<td>${rodo.pacjent}</td>		<td><a href="/rodo?id=${rodo.id}"  style="text-decoration:none">pokaż</a> <a href="/delete?id=${rodo.id}"  style="text-decoration:none">usuń</a></td>						</tr>
 	
 				
 		</c:forEach>		
