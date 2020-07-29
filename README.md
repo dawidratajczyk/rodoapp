@@ -1,7 +1,7 @@
 # RODOAPP - application to create and store RODO documents
 aplication was made for demostration purpose.
 
-# URL http://https://rodoexampleapp.herokuapp.com/
+# URL https://rodoexampleapp.herokuapp.com/
 * user = user
 * password = dawid
 
